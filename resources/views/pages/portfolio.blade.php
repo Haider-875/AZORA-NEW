@@ -11,7 +11,7 @@
   <div class="floating-orb floating-orb-cyan position-absolute top-50 start-0 translate-middle-y pointer-events-none" style="width: 320px; height: 320px;" aria-hidden="true"></div>
 
   <div class="container-xl position-relative px-3 px-sm-4 px-lg-5" style="z-index: 1;">
-    <div class="rv in text-center mx-auto" style="max-width: 820px;">
+    <div class="rv in text-center mx-auto" style="max-width: 960px;">
       <span class="azora-badge mb-3">MEASURABLE COMMERCIAL IMPACT</span>
       <h1 class="font-heading fw-bolder text-white display-5 display-lg-4 lh-sm tracking-tight mb-4">
         Real Deployments. Measured <span class="text-gradient-cyan">Business Velocity</span>.

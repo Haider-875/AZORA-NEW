@@ -235,9 +235,12 @@
       <div class="col-md-6 col-lg-4 gsap-stagger-item rv in rv-d3">
         <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
           <div>
-            <div class="card-icon-box mb-3 text-amber-400" style="background: rgba(251, 191, 36, 0.15);">
+            <div class="card-icon-box mb-3 text-cyan-400" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8;">
               <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2l1.9 5.6 5.8.2-4.6 3.6 1.7 5.8-4.8-3.4-4.8 3.4 1.7-5.8L4.3 7.8l5.8-.2z"/>
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="23"/>
+                <line x1="8" y1="23" x2="16" y2="23"/>
               </svg>
             </div>
             <h3 class="font-heading fw-bold text-white fs-5 mb-2">AI Front-Office Agents</h3>
@@ -310,7 +313,7 @@
         <div class="row g-3 cycle-cards-grid">
           <!-- Card 01 -->
           <div class="col-sm-6">
-            <x-card number="01" title="Discovery &amp; Blueprint" description="We map your commercial goals, competitors, target keywords, and user conversion pathways." class="h-100" />
+            <x-card number="01" title="Discovery & Blueprint" description="We map your commercial goals, competitors, target keywords, and user conversion pathways." class="h-100" />
           </div>
 
           <!-- Card 02 -->
@@ -325,7 +328,7 @@
 
           <!-- Card 04 -->
           <div class="col-sm-6">
-            <x-card number="04" title="Organic Scale &amp; Support" description="Continuous monitoring, Google Map Pack dominance, speed maintenance, and regular strategic updates." class="h-100" />
+            <x-card number="04" title="Organic Scale & Support" description="Continuous monitoring, Google Map Pack dominance, speed maintenance, and regular strategic updates." class="h-100" />
           </div>
         </div>
       </div>
