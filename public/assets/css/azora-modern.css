@@ -645,6 +645,155 @@
   transform: rotate(90deg) scale(0.5);
 }
 
+/* ============================================================
+   PHASE 6.3 — HOMEPAGE DRIBBBLE DUAL-THEME ELEVATIONS
+   ============================================================ */
+
+/* Hero Atmospheric Floating Orbs in Light Theme */
+[data-bs-theme="light"] .floating-orb-primary {
+  background: radial-gradient(circle, rgba(23, 105, 232, 0.12) 0%, transparent 70%) !important;
+}
+
+[data-bs-theme="light"] .floating-orb-cyan {
+  background: radial-gradient(circle, rgba(0, 119, 212, 0.08) 0%, transparent 70%) !important;
+}
+
+/* Hero Badge in Dual Themes */
+.hero-badge {
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+[data-bs-theme="light"] .hero-badge {
+  background: #FFFFFF !important;
+  border-color: #D5E6F5 !important;
+  box-shadow: 0 2px 8px rgba(16, 36, 58, 0.05) !important;
+}
+
+[data-bs-theme="light"] .hero-badge .font-mono-badge {
+  color: #0077D4 !important;
+}
+
+/* Light Theme Text Gradients */
+[data-bs-theme="light"] .text-gradient-primary {
+  background: linear-gradient(135deg, #1769E8 0%, #0077D4 50%, #4F46E5 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Hero Proof Metric Bento Boxes */
+.hero-metric-box {
+  background: rgba(16, 27, 46, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 24px -8px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hero-metric-box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(56, 189, 248, 0.35);
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.65), 0 0 18px rgba(56, 189, 248, 0.15);
+}
+
+[data-bs-theme="light"] .hero-metric-box {
+  background: #FFFFFF !important;
+  border-color: #D5E6F5 !important;
+  box-shadow: 0 8px 24px -6px rgba(16, 36, 58, 0.08), 0 2px 6px -1px rgba(16, 36, 58, 0.03) !important;
+}
+
+[data-bs-theme="light"] .hero-metric-box:hover {
+  border-color: #1769E8 !important;
+  box-shadow: 0 14px 32px -6px rgba(23, 105, 232, 0.16), 0 4px 10px -2px rgba(16, 36, 58, 0.06) !important;
+}
+
+[data-bs-theme="light"] .hero-metric-box .font-heading {
+  color: #10243A !important;
+}
+
+[data-bs-theme="light"] .hero-metric-box .font-mono-badge {
+  color: #52677D !important;
+}
+
+/* Pricing Filter Pills in Light Theme */
+[data-bs-theme="light"] .filter-pill {
+  background: #FFFFFF !important;
+  border-color: #D5E6F5 !important;
+  color: #52677D !important;
+  box-shadow: 0 2px 6px rgba(16, 36, 58, 0.04) !important;
+}
+
+[data-bs-theme="light"] .filter-pill:hover {
+  color: #1769E8 !important;
+  border-color: #1769E8 !important;
+  background: #F4F9FF !important;
+}
+
+[data-bs-theme="light"] .filter-pill.active {
+  color: #FFFFFF !important;
+  background: #1769E8 !important;
+  border-color: #1769E8 !important;
+  box-shadow: 0 4px 14px rgba(23, 105, 232, 0.3) !important;
+}
+
+.faq-toggle-btn {
+  color: #FFFFFF !important;
+}
+
+[data-bs-theme="light"] .faq-toggle-btn {
+  color: #10243A !important;
+}
+
+/* FAQ Accordion Dual-Theme Support */
+[data-bs-theme="light"] .faq-modern-item {
+  background: #FFFFFF !important;
+  border-color: #D5E6F5 !important;
+  box-shadow: 0 6px 20px -6px rgba(16, 36, 58, 0.06) !important;
+}
+
+[data-bs-theme="light"] .faq-modern-item:hover {
+  border-color: #1769E8 !important;
+  box-shadow: 0 10px 24px -6px rgba(23, 105, 232, 0.12) !important;
+}
+
+[data-bs-theme="light"] .faq-modern-item.open {
+  border-color: #1769E8 !important;
+  box-shadow: 0 12px 30px -6px rgba(23, 105, 232, 0.16) !important;
+}
+
+[data-bs-theme="light"] .faq-modern-item button,
+[data-bs-theme="light"] .faq-modern-item button.btn {
+  color: #10243A !important;
+}
+
+[data-bs-theme="light"] .faq-modern-item button i {
+  color: #0077D4 !important;
+}
+
+[data-bs-theme="light"] .faq-modern-panel p {
+  color: #52677D !important;
+}
+
+/* Map Bento Dual-Theme Support */
+[data-bs-theme="light"] .azora-map-bento {
+  background: #FFFFFF !important;
+  border-color: #D5E6F5 !important;
+  box-shadow: 0 16px 40px -10px rgba(16, 36, 58, 0.08) !important;
+}
+
+[data-bs-theme="light"] .azora-map-bento > .row > div:first-child {
+  background: #FFFFFF !important;
+}
+
+[data-bs-theme="light"] .azora-map-frame {
+  filter: none !important;
+}
+
 *, ::before, ::after {
   box-sizing: border-box;
 }

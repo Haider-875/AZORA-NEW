@@ -413,3 +413,39 @@
     transition: none !important;
   }
 }
+
+/* ============================================================
+   LIGHT THEME ADAPTERS (#CCE8FF & PURE WHITE SURFACES)
+   ============================================================ */
+[data-bs-theme="light"] .cycle-bg-glow {
+  background: radial-gradient(circle, rgba(23, 105, 232, 0.12) 0%, rgba(0, 119, 212, 0.05) 50%, transparent 70%) !important;
+  opacity: 0.18 !important;
+}
+
+[data-bs-theme="light"] .cycle-particle {
+  background: #1769E8 !important;
+  box-shadow: 0 0 6px rgba(23, 105, 232, 0.5) !important;
+}
+
+[data-bs-theme="light"] .cycle-travel-pulse {
+  background: #1769E8 !important;
+  box-shadow: 0 0 10px #1769E8, 0 0 20px rgba(23, 105, 232, 0.6) !important;
+}
+
+[data-bs-theme="light"] .cycle-connector-path {
+  stroke: rgba(23, 105, 232, 0.22) !important;
+}
+
+[data-bs-theme="light"] .cycle-pill {
+  background: #FFFFFF !important;
+  border-color: #D5E6F5 !important;
+  box-shadow: 0 2px 8px rgba(16, 36, 58, 0.04) !important;
+}
+
+[data-bs-theme="light"] .cycle-heading-line {
+  color: #10243A !important;
+}
+
+[data-bs-theme="light"] .cycle-paragraph {
+  color: #52677D !important;
+}

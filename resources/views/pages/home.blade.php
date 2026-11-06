@@ -22,7 +22,7 @@
       <!-- Left Hero Column -->
       <div class="col-lg-6 hero-entrance-col">
         <!-- Live Indicator Badge -->
-        <div class="hero-badge d-inline-flex align-items-center gap-2 rounded-pill px-3 py-1 mb-3 border border-info border-opacity-25" style="background: rgba(56, 189, 248, 0.1);">
+        <div class="hero-badge d-inline-flex align-items-center gap-2 rounded-pill px-3 py-1 mb-3">
           <span class="rounded-circle bg-info" style="width: 8px; height: 8px; box-shadow: 0 0 10px #38BDF8;"></span>
           <span class="font-mono-badge text-azora-cyan fw-bold" style="font-size: 0.72rem; letter-spacing: 0.2em;">Next-Gen Web &amp; Digital Growth</span>
         </div>
@@ -48,30 +48,38 @@
         </div>
 
         <!-- Proof Metrics Row -->
-        <div class="hero-metrics row g-3 pt-4 border-top border-secondary border-opacity-25 text-center text-sm-start">
+        <div class="hero-metrics row g-2 g-sm-3 pt-4 border-top border-secondary border-opacity-25 text-center text-sm-start">
           <div class="col-6 col-sm-3">
-            <div class="font-heading fs-2 fw-bolder text-white">
-              <span class="counter" data-count="500">500</span><span class="text-azora-cyan">+</span>
+            <div class="hero-metric-box p-3 h-100">
+              <div class="font-heading fs-2 fw-bolder text-white">
+                <span class="counter" data-count="500">500</span><span class="text-azora-cyan">+</span>
+              </div>
+              <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem; letter-spacing: 0.04em;">Platforms Live</div>
             </div>
-            <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem;">Platforms Live</div>
           </div>
           <div class="col-6 col-sm-3">
-            <div class="font-heading fs-2 fw-bolder text-white">
-              $45M<span class="text-azora-cyan">+</span>
+            <div class="hero-metric-box p-3 h-100">
+              <div class="font-heading fs-2 fw-bolder text-white">
+                $45M<span class="text-azora-cyan">+</span>
+              </div>
+              <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem; letter-spacing: 0.04em;">Client Revenue</div>
             </div>
-            <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem;">Client Revenue</div>
           </div>
           <div class="col-6 col-sm-3">
-            <div class="font-heading fs-2 fw-bolder text-white">
-              <span class="counter" data-count="99">99</span>.9<span class="text-azora-cyan">%</span>
+            <div class="hero-metric-box p-3 h-100">
+              <div class="font-heading fs-2 fw-bolder text-white">
+                <span class="counter" data-count="99">99</span>.9<span class="text-azora-cyan">%</span>
+              </div>
+              <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem; letter-spacing: 0.04em;">Uptime Maintained</div>
             </div>
-            <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem;">Uptime Maintained</div>
           </div>
           <div class="col-6 col-sm-3">
-            <div class="font-heading fs-2 fw-bolder text-white">
-              &lt; 15<span class="text-azora-cyan">s</span>
+            <div class="hero-metric-box p-3 h-100">
+              <div class="font-heading fs-2 fw-bolder text-white">
+                &lt; 15<span class="text-azora-cyan">s</span>
+              </div>
+              <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem; letter-spacing: 0.04em;">AI Response Time</div>
             </div>
-            <div class="font-mono-badge text-slate-400 small mt-1" style="font-size: 0.65rem;">AI Response Time</div>
           </div>
         </div>
 
@@ -547,7 +555,7 @@
     <div class="d-flex flex-column gap-2">
       
       <div class="faq-modern-item open">
-        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center text-white" onclick="AZ.toggleFaq(this)">
+        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center faq-toggle-btn" onclick="AZ.toggleFaq(this)">
           <span class="fw-bold fs-6">How quickly can our new website be launched?</span>
           <i class="bi bi-chevron-down text-azora-cyan"></i>
         </button>
@@ -559,7 +567,7 @@
       </div>
 
       <div class="faq-modern-item">
-        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center text-white" onclick="AZ.toggleFaq(this)">
+        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center faq-toggle-btn" onclick="AZ.toggleFaq(this)">
           <span class="fw-bold fs-6">Are there long-term contracts or hidden setup fees?</span>
           <i class="bi bi-chevron-down text-azora-cyan"></i>
         </button>
@@ -571,7 +579,7 @@
       </div>
 
       <div class="faq-modern-item">
-        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center text-white" onclick="AZ.toggleFaq(this)">
+        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center faq-toggle-btn" onclick="AZ.toggleFaq(this)">
           <span class="fw-bold fs-6">How does the 24/7 AI Voice Receptionist work?</span>
           <i class="bi bi-chevron-down text-azora-cyan"></i>
         </button>
@@ -583,7 +591,7 @@
       </div>
 
       <div class="faq-modern-item">
-        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center text-white" onclick="AZ.toggleFaq(this)">
+        <button type="button" class="btn w-100 text-start p-4 d-flex justify-content-between align-items-center faq-toggle-btn" onclick="AZ.toggleFaq(this)">
           <span class="fw-bold fs-6">What makes Azora different from standard marketing agencies?</span>
           <i class="bi bi-chevron-down text-azora-cyan"></i>
         </button>
