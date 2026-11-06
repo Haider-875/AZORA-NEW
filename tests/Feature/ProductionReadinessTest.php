@@ -53,3 +53,4 @@ class ProductionReadinessTest extends TestCase
         Artisan::call('view:clear');
     }
 }
+

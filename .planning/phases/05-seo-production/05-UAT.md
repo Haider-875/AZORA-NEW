@@ -19,3 +19,4 @@ php artisan test --filter=SeoMetadataTest
 php artisan test --filter=ProductionReadinessTest
 ```
 **Results:** 9 tests passed, 33 assertions passed (0 failures).
+

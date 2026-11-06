@@ -71,3 +71,4 @@ class SeoMetadataTest extends TestCase
         $this->assertStringContainsString('Sitemap:', $robotsContent);
     }
 }
+
