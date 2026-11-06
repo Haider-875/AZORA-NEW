@@ -109,3 +109,36 @@ updated: 2026-11-06T11:24:00Z
   - Verified production configuration caching (`config:cache`, `route:cache`, `view:cache`).
   - Automated tests: `tests/Feature/ProductionReadinessTest.php` (4 tests, 24 assertions passed).
   - Total test suite: **56 tests, 272 assertions (100% passing)**.
+
+---
+
+### Phase 6: Dribbble-Inspired Dual Theme & Premium Motion Redesign
+**Branch:** `ND` (Local only)  
+**Status:** ⏳ Ready for Execution  
+**Objective:** Transform the AZORA website into a premium, modern digital agency website featuring a complete dual-theme system (Light theme in signature `#CCE8FF` Azora blue / Dark theme in preserved cyber-glass identity) and a professional GSAP motion design system. Strict Zero Tailwind, 100% Paymate 3D Carousel preservation, zero backend/database mutations.
+
+**Approved 7-Phase Execution Breakdown:**
+- [ ] **Phase 6.1: Git Branch, Design Audit & Dual Theme Foundation**
+  - Establish `[data-bs-theme="light"]` and `[data-bs-theme="dark"]` design tokens in `azora-modern.css`.
+  - Implement zero-FOUC theme initialization script in `<head>` and `localStorage` persistence.
+  - Calibrate typography scale, surface elevations, borders, and shadows.
+- [ ] **Phase 6.2: Global Navigation & Shared Components**
+  - Redesign navbar and footer with dual-theme compatibility.
+  - Implement accessible sun/moon theme switcher button with smooth rotation.
+  - Upgrade buttons, cards, modals, dropdowns, and floating trigger.
+- [ ] **Phase 6.3: Homepage Complete Redesign**
+  - Dribbble-grade hero section with headline hierarchy and animated text masks.
+  - Redesign service capabilities cards and 4-stage engineering panels.
+  - Elevate live operations telemetry stage and FAQ accordions.
+- [ ] **Phase 6.4: Inner Pages Redesign**
+  - Redesign Services, Plans, Plans & Services, Portfolio, About, Quote, and Success pages.
+  - Standardize pricing tables, checkmark SVGs, and quote configurator form in both themes.
+- [ ] **Phase 6.5: Advanced Motion & Interactive Experiences**
+  - Integrate full GSAP and ScrollTrigger system (staggered entrances, kinetic typography, magnetic CTAs).
+  - Respect `prefers-reduced-motion` and ensure 60fps mobile responsiveness.
+- [ ] **Phase 6.6: Responsive Design & Accessibility**
+  - Verify and calibrate all viewports: 390px, 576px, 768px, 1024px, 1440px across both Light and Dark themes.
+- [ ] **Phase 6.7: Final Visual QA & Regression Testing**
+  - Headless dual-theme screenshot captures at desktop & mobile sizes.
+  - Full PHPUnit test execution (56/56 passing, 0 regressions).
+  - Paymate 3D carousel verification.

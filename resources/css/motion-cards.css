@@ -3,15 +3,25 @@
    Vite + Blade Architecture · Strict Performance (Transform/Opacity Only)
    ============================================================ */
 
-:root {
-  --card-border: rgba(255, 255, 255, 0.08);
+:root,
+[data-bs-theme="dark"] {
+  --card-border: var(--az-border, rgba(255, 255, 255, 0.08));
   --card-glow: rgba(56, 189, 248, 0.18);
   --accent: #38bdf8;
   --accent-bright: #67e8f9;
   --accent-gradient: linear-gradient(90deg, #2469eb, #38bdf8);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --card-bg: #0b1320;
+  --card-bg: var(--az-surface-card, #0b1320);
   --card-radius: 1rem;
+}
+
+[data-bs-theme="light"] {
+  --card-border: var(--az-border, #D5E6F5);
+  --card-glow: rgba(23, 105, 232, 0.12);
+  --accent: #1769E8;
+  --accent-bright: #0077D4;
+  --accent-gradient: linear-gradient(90deg, #1769E8, #0077D4);
+  --card-bg: var(--az-surface-card, #FFFFFF);
 }
 
 /* Base Motion Card Styling (applies to <x-card> and [data-motion-card]) */

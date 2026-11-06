@@ -1,18 +1,21 @@
 ---
-milestone: v1.0-commercial-readiness
-phase: 5
-plan: 5.2
-status: completed
-updated: 2026-11-06T12:18:00Z
+milestone: v2.0-dribbble-redesign
+branch: ND
+phase: 6
+plan: 6.1
+status: ready-for-execution
+updated: 2026-11-06T14:16:00Z
 ---
 
 # STATE.md — Project State & Memory
 
 ## Current Position
 
-**Milestone:** v1.0-commercial-readiness  
-**Active Phase:** All Phases Complete (Phases 1–5 Delivered)  
-**Status:** 56 Tests, 272 Assertions Passing (100% Pass Rate). Commercial Readiness Milestone Complete!
+**Milestone:** v2.0-dribbble-redesign  
+**Branch:** `ND` (Local only — no remote pushes)  
+**Active Phase:** Phase 6 — Dribbble-Inspired Dual Theme & Premium Motion Redesign  
+**Active Plan:** Plan 6.1 — Git Branch, Design Audit & Dual Theme Foundation  
+**Status:** Branch `ND` created and active. Phases 1–5 completed and verified (56/56 tests passing). Ready for Phase 6.1 implementation upon user approval.
 
 ---
 
@@ -25,6 +28,19 @@ updated: 2026-11-06T12:18:00Z
 | **3** | Automated Testing & Nyquist Verification | Plan 3.1 (Business Flows), Plan 3.2 (Regression & Boundaries) | **✅ Complete** |
 | **4** | Dead Asset Pruning & Architecture Cleanup | Plan 4.1 (Checkpoint & Pruning), Plan 4.2 (Asset Integrity Gate) | **✅ Complete** |
 | **5** | SEO, Performance & Production Readiness | Plan 5.1 (Metadata & Schemas), Plan 5.2 (Lighthouse 90+) | **✅ Complete** |
+| **6** | Dribbble Dual Theme & Motion Redesign | Plans 6.1 through 6.7 (Light #CCE8FF / Dark Cyber / GSAP) | **⏳ Ready to Execute** |
+
+---
+
+## Approved Phase 6 Sub-Phase Sequence
+
+1. **Phase 6.1:** Git Branch, Design Audit & Dual Theme Foundation (CSS tokens, zero-FOUC script, persistence)
+2. **Phase 6.2:** Global Navigation & Shared Components (Navbar theme toggle, redesigned footer, buttons, dropdowns, modals)
+3. **Phase 6.3:** Homepage Complete Redesign (Dribbble hero, kinetic headlines, 4-stage cards, live telemetry)
+4. **Phase 6.4:** Inner Pages Redesign (Services, Plans, Portfolio, About, Quote, Success in both themes)
+5. **Phase 6.5:** Advanced Motion & Interactive Experiences (GSAP choreography, scroll triggers, magnetic CTAs)
+6. **Phase 6.6:** Responsive Design & Accessibility (390px to 1440px across both themes, reduced-motion compliance)
+7. **Phase 6.7:** Final Visual QA & Regression Testing (Dual-theme screenshot comparison, Paymate 3D carousel check, 56/56 tests)
 
 ---
 

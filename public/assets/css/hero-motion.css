@@ -20,6 +20,38 @@
   --hm-font-mono: 'JetBrains Mono', ui-monospace, monospace;
 }
 
+[data-bs-theme="light"] {
+  --hm-bg: #FFFFFF;
+  --hm-text: #10243A;
+  --hm-muted: #52677D;
+  --hm-card-border: #D5E6F5;
+}
+
+[data-bs-theme="light"] .hero-glass-card {
+  background: #FFFFFF !important;
+  border-color: #D5E6F5 !important;
+  box-shadow: 0 16px 36px -10px rgba(16, 36, 58, 0.08), 0 2px 8px -2px rgba(16, 36, 58, 0.04) !important;
+  color: #10243A !important;
+}
+
+[data-bs-theme="light"] .call-header-row {
+  border-bottom-color: #E2E8F0 !important;
+}
+
+[data-bs-theme="light"] .call-live-indicator {
+  color: #10243A !important;
+}
+
+[data-bs-theme="light"] .transcript-line {
+  color: #52677D !important;
+}
+
+[data-bs-theme="light"] .call-timer {
+  background: #F4F9FF !important;
+  border-color: #D5E6F5 !important;
+  color: #52677D !important;
+}
+
 /* Ambient Violet Glow drifting in background */
 .hero-ambient-glow {
   position: absolute;

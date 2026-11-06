@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,27 @@
   <title>{{ $title ?? 'Azora Solution | Website Development & Digital Marketing Services' }}</title>
   <meta name="description" content="{{ $metaDescription ?? 'Azora Solution provides custom website development, local SEO growth systems, and AI front-office automation for modern businesses.' }}" />
   <link rel="canonical" href="{{ $canonical ?? url()->current() }}" />
+
+  <!-- Immediate Zero-FOUC Theme Preloader -->
+  <script>
+    (function() {
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var urlTheme = urlParams.get('theme');
+        var stored = urlTheme || localStorage.getItem('azora_theme');
+        if (urlTheme) {
+          try { localStorage.setItem('azora_theme', urlTheme); } catch(err) {}
+        }
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored ? stored : (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-bs-theme', theme);
+        document.documentElement.classList.remove('dark-theme', 'light-theme');
+        document.documentElement.classList.add(theme + '-theme');
+      } catch (e) {
+        document.documentElement.setAttribute('data-bs-theme', 'dark');
+      }
+    })();
+  </script>
 
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1320'/%3E%3Cpath d='M32 14 50 50h-8.6L32 26.4 22.6 50H14z' fill='%23fff'/%3E%3Ccircle cx='32' cy='45' r='4.4' fill='%232469EB'/%3E%3C/svg%3E" />
