@@ -129,7 +129,7 @@
                 <span class="browser-window-live-dot" style="width: 5px; height: 5px;"></span>
                 Auto Care &amp; Fleet Systems
               </span>
-              <span class="badge rounded-pill bg-success bg-opacity-15 text-success font-mono-badge" style="font-size: 0.65rem;">VERIFIED CLIENT</span>
+              <!-- <span class="badge rounded-pill bg-success bg-opacity-15 text-success font-mono-badge" style="font-size: 0.65rem;">VERIFIED CLIENT</span> -->
             </div>
 
             <h2 class="font-heading fw-bold text-white fs-2 mb-2">
@@ -254,7 +254,7 @@
                 <span class="browser-window-live-dot" style="width: 5px; height: 5px;"></span>
                 Healthcare &amp; In-Home Care
               </span>
-              <span class="badge rounded-pill bg-success bg-opacity-15 text-success font-mono-badge" style="font-size: 0.65rem;">VERIFIED CLIENT</span>
+              <!-- <span class="badge rounded-pill bg-success bg-opacity-15 text-success font-mono-badge" style="font-size: 0.65rem;">VERIFIED CLIENT</span> -->
             </div>
 
             <h2 class="font-heading fw-bold text-white fs-2 mb-2">
@@ -379,7 +379,7 @@
                 <span class="browser-window-live-dot" style="width: 5px; height: 5px;"></span>
                 Specialty Retail &amp; Commerce
               </span>
-              <span class="badge rounded-pill bg-success bg-opacity-15 text-success font-mono-badge" style="font-size: 0.65rem;">VERIFIED CLIENT</span>
+              <!-- <span class="badge rounded-pill bg-success bg-opacity-15 text-success font-mono-badge" style="font-size: 0.65rem;">VERIFIED CLIENT</span> -->
             </div>
 
             <h2 class="font-heading fw-bold text-white fs-2 mb-2">

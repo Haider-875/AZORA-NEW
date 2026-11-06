@@ -102,7 +102,7 @@
           <span>(984) 388-8298</span>
         </a>
 
-        <button type="button" onclick="AZ.openQuoteModal()" class="btn-modern-primary py-2 px-3" style="font-size: 0.8rem;">
+        <button type="button" onclick="AZ.openQuoteModal()" class="btn-modern-primary d-none d-sm-inline-flex py-2 px-3" style="font-size: 0.8rem;">
           <span>Get a Quote</span>
         </button>
 
