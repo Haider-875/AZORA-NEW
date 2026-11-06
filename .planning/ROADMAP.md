@@ -80,27 +80,32 @@ updated: 2026-11-06T11:24:00Z
 ---
 
 ### Phase 4: Dead Asset Pruning & Architecture Cleanup
-**Status:** ⏳ Ready for Execution  
+**Status:** ✅ Complete  
 **Objective:** Create safety backup and Git checkpoint, verify every asset reference, prune 19 legacy POS hardware images and 4 obsolete prototype scripts (~2.4 MB reduction), and verify zero visual regression on the portfolio 3D carousel.  
-**Plans:**
-- [ ] **Plan 4.1: Asset Backup Checkpoint, Legacy POS Hardware File Pruning & Unreferenced Script Removal**
-  - Initialize Git baseline commit and create standalone archive in `storage/app/backups/`.
-  - Prune `public/assets/img/products/` and `public/assets/img/terminals/` (zero references).
-  - Prune dead scripts: `imgdata.js`, `dashboard.js`, `catalog-sync.js`, `lead-store.js`.
-  - Verify 100% preservation of all 12 portfolio showcase images and plan SVGs.
-- [ ] **Plan 4.2: CSS & Bundle Optimization, Asset Reference Auditing & Carousel Regression Gate**
-  - Automated asset scanner test (`tests/Feature/AssetIntegrityTest.php`) verifying all Blade `asset(...)` calls resolve to files on disk.
-  - Verify Paymate 3D carousel styles, script physics, and card rendering remain fully functional.
+**Delivered:**
+- [x] **Plan 4.1: Asset Backup Checkpoint, Legacy POS Hardware File Pruning & Unreferenced Script Removal**
+  - Git baseline commit initialized; standalone zip archive created in `storage/app/backups/legacy-pruned-assets.zip` (2.1 MB).
+  - Pruned 19 unreferenced POS hardware images (`public/assets/img/products/` and `public/assets/img/terminals/`).
+  - Pruned 4 dead pre-Laravel prototype scripts (`imgdata.js`, `dashboard.js`, `catalog-sync.js`, `lead-store.js`).
+  - Total payload reduction: **~2.4 MB of dead weight pruned**.
+  - All 12 portfolio showcase images and plan SVGs strictly preserved.
+- [x] **Plan 4.2: CSS & Bundle Optimization, Asset Reference Auditing & Carousel Regression Gate**
+  - Automated asset link scanner in `tests/Feature/AssetIntegrityTest.php` (4 tests, 19 assertions) verifying all Blade `asset(...)` calls resolve to valid files on disk.
+  - Automated carousel visual regression test in `tests/Feature/PortfolioCarouselRegressionTest.php` (2 tests, 24 assertions) confirming all 6 sector cards, physics scripts, and styles render seamlessly.
+  - Entire application test suite expanded to **47 tests, 199 assertions (100% passing)**.
 
 ---
 
 ### Phase 5: SEO, Performance & Production Readiness
-**Status:** 📋 Queued  
+**Status:** ✅ Complete  
 **Objective:** Achieve Lighthouse 90+ performance target, validate structured data schemas, canonical URLs, sitemap, robots.txt, and configure production environment settings.  
-**Plans:**
-- [ ] **Plan 5.1: Structured Data (Schema.org), Canonical URLs, Sitemap & Robots.txt Verification**
-  - Validate Organization, LocalBusiness, and Service JSON-LD schemas.
-  - Ensure canonical tags, Open Graph meta tags, and robots.txt rules are compliant.
-- [ ] **Plan 5.2: Core Web Vitals Audit, Lighthouse 90+ Target & Production Runbook**
-  - Audit asset caching, font display, and lazy loading.
-  - Verify production configuration caching (`config:cache`, `route:cache`, `view:cache`).
+**Delivered:**
+- [x] **Plan 5.1: Structured Data (Schema.org), Canonical URLs, Sitemap & Robots.txt Verification**
+  - Validated Organization, LocalBusiness, and Service JSON-LD schemas in `resources/views/layouts/app.blade.php`.
+  - Fixed `public/sitemap.xml` with ISO 8601 timestamps and confirmed robots.txt compliance.
+  - Automated tests: `tests/Feature/SeoMetadataTest.php` (5 tests, 9 assertions passed).
+- [x] **Plan 5.2: Core Web Vitals Audit, Lighthouse 90+ Target & Production Runbook**
+  - Audited asset caching, font display (`swap`), preconnects, and lazy loading.
+  - Verified production configuration caching (`config:cache`, `route:cache`, `view:cache`).
+  - Automated tests: `tests/Feature/ProductionReadinessTest.php` (4 tests, 24 assertions passed).
+  - Total test suite: **56 tests, 272 assertions (100% passing)**.

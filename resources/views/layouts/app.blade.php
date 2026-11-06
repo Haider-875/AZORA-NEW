@@ -39,6 +39,49 @@
   <noscript><style>[data-motion-card]{opacity:1 !important;transform:none !important;}</style></noscript>
 
   <script>document.documentElement.className += ' js';</script>
+
+  <!-- Schema.org JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {!! json_encode([
+    '@context' => 'https://schema.org',
+    '@graph' => [
+      [
+        '@type' => 'ProfessionalService',
+        '@id' => url('/') . '/#organization',
+        'name' => 'Azora Solution',
+        'url' => url('/'),
+        'logo' => asset('assets/img/portfolio/caresourceindy-logo.png'),
+        'image' => asset('assets/img/plans/plan-website-growth.svg'),
+        'description' => 'High-performance commercial web engineering, local SEO growth systems, and AI front-office automation for American businesses.',
+        'telephone' => '+19843888298',
+        'email' => 'hello@azorasolution.com',
+        'address' => [
+          '@type' => 'PostalAddress',
+          'streetAddress' => '1015 GLENDALE CHASE CT',
+          'addressLocality' => 'Morrisville',
+          'addressRegion' => 'NC',
+          'postalCode' => '27560',
+          'addressCountry' => 'US',
+        ],
+        'geo' => [
+          '@type' => 'GeoCoordinates',
+          'latitude' => 35.8324,
+          'longitude' => -78.8256,
+        ],
+        'priceRange' => '$$$',
+      ],
+      [
+        '@type' => 'WebSite',
+        '@id' => url('/') . '/#website',
+        'url' => url('/'),
+        'name' => 'Azora Solution',
+        'publisher' => [
+          '@id' => url('/') . '/#organization',
+        ],
+      ],
+    ],
+  ], JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+  </script>
   @stack('styles')
 </head>
 

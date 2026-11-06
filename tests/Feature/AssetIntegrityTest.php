@@ -91,3 +91,4 @@ class AssetIntegrityTest extends TestCase
         $this->assertGreaterThan(1000000, filesize($zipPath), 'The backup zip archive must be at least 1MB.');
     }
 }
+
