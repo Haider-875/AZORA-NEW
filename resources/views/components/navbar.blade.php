@@ -102,12 +102,22 @@
           <span>(984) 388-8298</span>
         </a>
 
+        <!-- Animated Light/Dark Theme Switcher -->
+        <button type="button" class="theme-toggle-btn d-inline-flex" id="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Switch Theme" onclick="AZ.toggleTheme()">
+          <span class="theme-toggle-track">
+            <span class="theme-toggle-thumb">
+              <i class="bi bi-sun-fill icon-sun" aria-hidden="true"></i>
+              <i class="bi bi-moon-stars-fill icon-moon" aria-hidden="true"></i>
+            </span>
+          </span>
+        </button>
+
         <button type="button" onclick="AZ.openQuoteModal()" class="btn-modern-primary d-none d-sm-inline-flex py-2 px-3" style="font-size: 0.8rem;">
           <span>Get a Quote</span>
         </button>
 
         <!-- Mobile Navigation Trigger -->
-        <button id="menu-btn" aria-label="Toggle navigation" class="btn btn-outline-secondary border-secondary border-opacity-25 text-white d-lg-none d-grid place-items-center p-2 rounded-3" style="width: 40px; height: 40px;">
+        <button id="menu-btn" aria-label="Toggle navigation" class="nav-mobile-trigger d-lg-none" type="button">
           <svg id="menu-ic-open" viewBox="0 0 24 24" style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
           <svg id="menu-ic-close" class="d-none" viewBox="0 0 24 24" style="width: 20px; height: 20px;" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
         </button>
@@ -119,12 +129,22 @@
     <div id="mobile-menu" class="mobile-nav-panel mt-2 p-3 p-sm-4 d-none d-lg-none" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
       <div class="mobile-nav-inner">
         
-        <!-- Header Eyebrow -->
+        <!-- Header Eyebrow with Mobile Theme Switcher -->
         <div class="d-flex justify-content-between align-items-center pb-2 mb-2 border-bottom border-white border-opacity-10">
           <span class="mobile-nav-eyebrow">NAVIGATION DIRECTORY</span>
-          <span class="mobile-nav-status">
-            <span class="pulse-dot-online"></span> LIVE 24/7
-          </span>
+          <div class="d-flex align-items-center gap-2">
+            <button type="button" class="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Switch Theme" onclick="AZ.toggleTheme()">
+              <span class="theme-toggle-track">
+                <span class="theme-toggle-thumb">
+                  <i class="bi bi-sun-fill icon-sun" aria-hidden="true"></i>
+                  <i class="bi bi-moon-stars-fill icon-moon" aria-hidden="true"></i>
+                </span>
+              </span>
+            </button>
+            <span class="mobile-nav-status">
+              <span class="pulse-dot-online"></span> LIVE 24/7
+            </span>
+          </div>
         </div>
 
         <!-- Primary Navigation List -->

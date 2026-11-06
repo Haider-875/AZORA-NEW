@@ -355,6 +355,38 @@
      5. FAQ ACCORDION ENGINE
      ============================================================ */
   window.AZ = window.AZ || {};
+
+  /* ============================================================
+     THEME SWITCHER ENGINE (LIGHT & DARK DUAL THEME)
+     ============================================================ */
+  AZ.toggleTheme = function () {
+    var current = document.documentElement.getAttribute('data-bs-theme') || 'dark';
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-bs-theme', next);
+    document.documentElement.classList.remove('dark-theme', 'light-theme');
+    document.documentElement.classList.add(next + '-theme');
+    try {
+      localStorage.setItem('azora_theme', next);
+    } catch (e) {}
+    AZ.syncThemeButtons(next);
+  };
+
+  AZ.syncThemeButtons = function (theme) {
+    if (!theme) {
+      theme = document.documentElement.getAttribute('data-bs-theme') || 'dark';
+    }
+    var isDark = theme === 'dark';
+    $$('.theme-toggle-btn').forEach(function (btn) {
+      btn.setAttribute('aria-pressed', isDark ? 'false' : 'true');
+      btn.setAttribute('title', isDark ? 'Switch to Light Theme' : 'Switch to Dark Theme');
+    });
+  };
+
+  AZ.initTheme = function () {
+    var theme = document.documentElement.getAttribute('data-bs-theme') || 'dark';
+    AZ.syncThemeButtons(theme);
+  };
+
   AZ.toggleFaq = function (btn) {
     var item = btn.closest('.faq-modern-item');
     if (!item) return;
@@ -406,7 +438,7 @@
     var csrfToken = $('meta[name="csrf-token"]') ? $('meta[name="csrf-token"]').getAttribute('content') : '';
 
     modalRoot.innerHTML =
-      '<div class="modal fade show d-block" id="rapidQuoteModal" tabindex="-1" style="background:rgba(2,6,23,0.88);backdrop-filter:blur(10px);z-index:9999;" role="dialog" aria-modal="true">' +
+      '<div class="modal fade show d-block azora-modal-backdrop" id="rapidQuoteModal" tabindex="-1" style="z-index:9999;" role="dialog" aria-modal="true">' +
         '<div class="modal-dialog modal-dialog-centered modal-lg">' +
           '<div class="modal-content modal-content-azora p-4 p-md-5 animate-scaleIn position-relative shadow-2xl">' +
             '<div class="position-absolute top-0 end-0 translate-middle pointer-events-none" style="width:260px;height:260px;background:radial-gradient(circle,rgba(56,189,248,0.12) 0%,transparent 70%);filter:blur(40px);z-index:0;"></div>' +
@@ -625,6 +657,7 @@
      INITIALIZATION ON DOM READY
      ============================================================ */
   function init() {
+    AZ.initTheme();
     initGlobalCursor();
     initNavigation();
     initMotionSystem();
