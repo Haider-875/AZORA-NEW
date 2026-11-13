@@ -1,0 +1,925 @@
+/* ============================================================
+   AZORA SOLUTIONS — PREMIUM INTERACTIVE SERVICE SHOWCASE & CAROUSEL
+   Apple / Linear / Stripe / Framer Level Visual Depth & Motion
+   Pure Bootstrap 5.3 + Custom CSS · Light & Dark Theme Native
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. SECTION ATMOSPHERIC ENVIRONMENT
+   ------------------------------------------------------------ */
+.service-showcase-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 5.5rem 0 4.5rem;
+}
+
+/* Atmospheric Ambient Lighting Blobs */
+.service-ambient-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.14;
+  transition: opacity 0.5s ease;
+}
+
+.service-ambient-glow-1 {
+  top: 10%;
+  left: -5%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, #2469EB 0%, #38BDF8 50%, transparent 70%);
+}
+
+.service-ambient-glow-2 {
+  bottom: 5%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #6366F1 0%, #2469EB 50%, transparent 70%);
+}
+
+[data-bs-theme="light"] .service-ambient-glow-1 {
+  background: radial-gradient(circle, rgba(23, 105, 232, 0.16) 0%, rgba(0, 119, 212, 0.08) 50%, transparent 70%);
+  opacity: 0.22;
+}
+
+[data-bs-theme="light"] .service-ambient-glow-2 {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(23, 105, 232, 0.06) 50%, transparent 70%);
+  opacity: 0.18;
+}
+
+/* Background Subtle Blueprint Grid */
+.service-blueprint-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 30%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, black 30%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-bs-theme="light"] .service-blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(16, 36, 58, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(16, 36, 58, 0.035) 1px, transparent 1px);
+}
+
+/* ------------------------------------------------------------
+   2. SECTION HEADER & CAROUSEL NAVIGATION CONTROLS
+   ------------------------------------------------------------ */
+.service-header-wrap {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 2.75rem;
+}
+
+.service-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  color: #38BDF8;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+[data-bs-theme="light"] .service-section-eyebrow {
+  background: #FFFFFF;
+  border-color: #D5E6F5;
+  color: #0077D4;
+  box-shadow: 0 2px 8px rgba(16, 36, 58, 0.04);
+}
+
+.service-eyebrow-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #38BDF8;
+  box-shadow: 0 0 10px #38BDF8;
+  animation: servicePulseDot 2s ease-in-out infinite;
+}
+
+[data-bs-theme="light"] .service-eyebrow-dot {
+  background-color: #0077D4;
+  box-shadow: 0 0 8px rgba(0, 119, 212, 0.7);
+}
+
+@keyframes servicePulseDot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.6; }
+}
+
+.service-section-title {
+  font-size: clamp(2rem, 3.8vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-top: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.service-section-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  max-width: 620px;
+}
+
+/* Header Carousel Control Cluster */
+.service-nav-cluster {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(16, 27, 46, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  padding: 6px 12px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+[data-bs-theme="light"] .service-nav-cluster {
+  background: #FFFFFF;
+  border-color: #D5E6F5;
+  box-shadow: 0 8px 24px -4px rgba(16, 36, 58, 0.08), 0 2px 6px rgba(16, 36, 58, 0.03);
+}
+
+.service-slide-counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--az-text-muted);
+  user-select: none;
+  min-width: 48px;
+  text-align: center;
+}
+
+.service-slide-counter .current-num {
+  color: var(--az-text-main);
+  font-weight: 800;
+}
+
+.service-nav-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--az-text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 0;
+  outline: none;
+}
+
+[data-bs-theme="light"] .service-nav-btn {
+  background: #F4F9FF;
+  border-color: #D5E6F5;
+  color: #10243A;
+}
+
+.service-nav-btn:hover:not(:disabled) {
+  background: #2469EB;
+  border-color: #2469EB;
+  color: #FFFFFF;
+  transform: scale(1.08);
+  box-shadow: 0 0 16px rgba(36, 105, 235, 0.45);
+}
+
+[data-bs-theme="light"] .service-nav-btn:hover:not(:disabled) {
+  background: #1769E8;
+  border-color: #1769E8;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(23, 105, 232, 0.35);
+}
+
+.service-nav-btn:active:not(:disabled) {
+  transform: scale(0.95);
+}
+
+.service-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.service-nav-btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.service-nav-btn.prev:hover svg {
+  transform: translateX(-2px);
+}
+
+.service-nav-btn.next:hover svg {
+  transform: translateX(2px);
+}
+
+/* ------------------------------------------------------------
+   3. CAROUSEL VIEWPORT & SCROLLING TRACK
+   ------------------------------------------------------------ */
+.service-carousel-viewport {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 6px 32px;
+  margin: -18px -6px -32px;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.service-carousel-viewport.is-dragging {
+  cursor: grabbing;
+}
+
+.service-carousel-track {
+  display: flex;
+  gap: 28px;
+  transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+/* Slide item flex basis */
+.service-carousel-slide {
+  flex: 0 0 calc(33.333% - 19px);
+  min-width: 320px;
+  max-width: 100%;
+  display: flex;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+@media (max-width: 1199.98px) {
+  .service-carousel-slide {
+    flex: 0 0 calc(50% - 14px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  .service-carousel-slide {
+    flex: 0 0 88%;
+    min-width: 290px;
+  }
+}
+
+/* ------------------------------------------------------------
+   4. PREMIUM CARD ARCHITECTURE (LINEAR / STRIPE / FRAMER LEVEL)
+   ------------------------------------------------------------ */
+.service-premium-card {
+  --card-spotlight: rgba(56, 189, 248, 0.12);
+  --card-border-glow: rgba(56, 189, 248, 0.35);
+  --card-accent: #38BDF8;
+  
+  position: relative;
+  width: 100%;
+  border-radius: 24px;
+  background: linear-gradient(170deg, rgba(16, 27, 46, 0.88) 0%, rgba(8, 14, 25, 0.94) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 30px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+[data-bs-theme="light"] .service-premium-card {
+  --card-spotlight: rgba(23, 105, 232, 0.08);
+  --card-border-glow: rgba(23, 105, 232, 0.28);
+  --card-accent: #1769E8;
+  
+  background: #FFFFFF;
+  border-color: #D5E6F5;
+  box-shadow: 0 18px 45px -12px rgba(16, 36, 58, 0.08), 0 2px 8px -2px rgba(16, 36, 58, 0.04), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Card Per-Type Signature Themes */
+.service-card-web {
+  --card-spotlight: rgba(16, 185, 129, 0.12);
+  --card-border-glow: rgba(16, 185, 129, 0.45);
+  --card-accent: #10B981;
+}
+
+[data-bs-theme="light"] .service-card-web {
+  --card-spotlight: rgba(16, 185, 129, 0.08);
+  --card-border-glow: rgba(16, 185, 129, 0.35);
+  --card-accent: #059669;
+}
+
+.service-card-seo {
+  --card-spotlight: rgba(192, 132, 252, 0.14);
+  --card-border-glow: rgba(192, 132, 252, 0.45);
+  --card-accent: #C084FC;
+}
+
+[data-bs-theme="light"] .service-card-seo {
+  --card-spotlight: rgba(124, 58, 237, 0.08);
+  --card-border-glow: rgba(124, 58, 237, 0.32);
+  --card-accent: #7C3AED;
+}
+
+.service-card-ai {
+  --card-spotlight: rgba(56, 189, 248, 0.15);
+  --card-border-glow: rgba(56, 189, 248, 0.5);
+  --card-accent: #38BDF8;
+}
+
+[data-bs-theme="light"] .service-card-ai {
+  --card-spotlight: rgba(0, 119, 212, 0.09);
+  --card-border-glow: rgba(0, 119, 212, 0.35);
+  --card-accent: #0077D4;
+}
+
+/* Radial Mouse Spotlight Overlay */
+.service-card-spotlight {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(350px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--card-spotlight), transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+.service-premium-card:hover .service-card-spotlight {
+  opacity: 1;
+}
+
+/* Animated Shimmer Border (:before) */
+.service-premium-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent 20%, var(--card-border-glow) 50%, transparent 80%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  z-index: 2;
+}
+
+.service-premium-card:hover::before {
+  opacity: 1;
+}
+
+/* Desktop Hover Lift */
+@media (hover: hover) and (pointer: fine) {
+  .service-premium-card:hover {
+    transform: translateY(-8px) scale(1.008);
+    border-color: var(--card-border-glow);
+    box-shadow: 0 28px 60px -15px rgba(0, 0, 0, 0.8), 0 0 30px var(--card-spotlight);
+  }
+
+  [data-bs-theme="light"] .service-premium-card:hover {
+    box-shadow: 0 24px 50px -12px rgba(16, 36, 58, 0.14), 0 4px 16px -2px rgba(16, 36, 58, 0.04);
+  }
+}
+
+/* ------------------------------------------------------------
+   5. CARD INTERNAL CONTENT & MICRO-STAGES
+   ------------------------------------------------------------ */
+.service-card-top {
+  position: relative;
+  z-index: 3;
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.service-badge-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--az-text-muted);
+}
+
+[data-bs-theme="light"] .service-badge-pill {
+  background: #F4F9FF;
+  border-color: #D5E6F5;
+  color: #52677D;
+}
+
+.service-icon-pod {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--card-accent);
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.service-premium-card:hover .service-icon-pod {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 10px 24px -4px var(--card-spotlight);
+}
+
+[data-bs-theme="light"] .service-icon-pod {
+  background: #F4F9FF;
+  border-color: #D5E6F5;
+  box-shadow: 0 4px 12px rgba(16, 36, 58, 0.06);
+}
+
+.service-icon-pod svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Card Heading & Description */
+.service-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  margin-bottom: 0.6rem;
+  transition: color 0.25s ease;
+}
+
+[data-bs-theme="light"] .service-card-title {
+  color: #10243A;
+}
+
+.service-card-desc {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: #94A3B8;
+  margin-bottom: 1.25rem;
+  min-height: 42px;
+}
+
+[data-bs-theme="light"] .service-card-desc {
+  color: #52677D;
+}
+
+/* ------------------------------------------------------------
+   6. INTERACTIVE MICRO-ILLUSTRATION STAGES
+   ------------------------------------------------------------ */
+.service-micro-stage {
+  position: relative;
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: rgba(4, 9, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 1.35rem;
+  overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+[data-bs-theme="light"] .service-micro-stage {
+  background: #F4F9FF;
+  border-color: #D5E6F5;
+}
+
+/* Micro-Stage 1: Web Dev Browser & Core Web Vitals */
+.stage-browser-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.stage-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.stage-dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+[data-bs-theme="light"] .stage-dots span {
+  background: rgba(16, 36, 58, 0.2);
+}
+
+.stage-url-bar {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--card-accent);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-bs-theme="light"] .stage-url-bar {
+  background: #FFFFFF;
+  border-color: #D5E6F5;
+}
+
+.stage-vitals-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.vital-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10B981;
+}
+
+[data-bs-theme="light"] .vital-chip {
+  color: #059669;
+}
+
+.vital-bar-wrap {
+  flex: 1;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+[data-bs-theme="light"] .vital-bar-wrap {
+  background: rgba(16, 36, 58, 0.1);
+}
+
+.vital-bar-fill {
+  height: 100%;
+  width: 98%;
+  background: #10B981;
+  border-radius: 9999px;
+  animation: vitalBarPulse 3s ease-in-out infinite alternate;
+}
+
+@keyframes vitalBarPulse {
+  0% { width: 94%; }
+  100% { width: 99%; }
+}
+
+/* Micro-Stage 2: SEO Map Radar & Rank Badge */
+.stage-seo-radar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.radar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.radar-target {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--card-accent);
+  opacity: 0.6;
+  animation: radarExpand 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+.radar-ring-2 {
+  animation-delay: 0.75s;
+}
+
+@keyframes radarExpand {
+  0% { transform: scale(0.3); opacity: 0.9; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.radar-center-pin {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--card-accent);
+  box-shadow: 0 0 8px var(--card-accent);
+}
+
+.radar-rank-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--az-text-main);
+}
+
+.radar-delta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #10B981;
+  background: rgba(16, 185, 129, 0.12);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+/* Micro-Stage 3: AI Voice Waves & Pulse Ring */
+.stage-ai-waves {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ai-wave-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 24px;
+}
+
+.ai-wave-bar {
+  width: 3.5px;
+  border-radius: 3px;
+  background: var(--card-accent);
+  transform-origin: bottom;
+  animation: aiWaveLive 1.1s ease-in-out infinite alternate;
+}
+
+.ai-wave-bar:nth-child(1) { height: 10px; animation-delay: 0.05s; }
+.ai-wave-bar:nth-child(2) { height: 20px; animation-delay: 0.25s; }
+.ai-wave-bar:nth-child(3) { height: 14px; animation-delay: 0.45s; }
+.ai-wave-bar:nth-child(4) { height: 22px; animation-delay: 0.15s; }
+.ai-wave-bar:nth-child(5) { height: 12px; animation-delay: 0.35s; }
+
+@keyframes aiWaveLive {
+  0% { transform: scaleY(0.4); opacity: 0.55; }
+  100% { transform: scaleY(1); opacity: 1; }
+}
+
+.ai-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--card-accent);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 3px 9px;
+  border-radius: 9999px;
+  border: 1px solid rgba(56, 189, 248, 0.22);
+}
+
+[data-bs-theme="light"] .ai-status-chip {
+  background: #FFFFFF;
+  border-color: #D5E6F5;
+  color: #0077D4;
+}
+
+/* ------------------------------------------------------------
+   7. FEATURE CHECKLIST MATRIX
+   ------------------------------------------------------------ */
+.service-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+
+[data-bs-theme="light"] .service-features-list {
+  border-top-color: #D5E6F5;
+}
+
+.service-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: #CBD5E1;
+}
+
+[data-bs-theme="light"] .service-feature-item {
+  color: #52677D;
+}
+
+.service-feature-bullet {
+  color: var(--card-accent);
+  font-size: 0.85rem;
+  line-height: 1;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* ------------------------------------------------------------
+   8. CARD FOOTER, PRICING & MAGNETIC CTA BUTTONS
+   ------------------------------------------------------------ */
+.service-card-bottom {
+  position: relative;
+  z-index: 3;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+[data-bs-theme="light"] .service-card-bottom {
+  border-top-color: #D5E6F5;
+}
+
+.service-pricing-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.service-price-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--az-text-main);
+  letter-spacing: 0.02em;
+}
+
+.service-price-tag strong {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--card-accent);
+}
+
+.service-badge-guarantee {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--az-text-muted);
+}
+
+/* Dedicated Magnetic Service CTA Button */
+.btn-service-showcase {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(204, 232, 255, 0.28) !important;
+  background: #002774 !important;
+  background: color-mix(in srgb, #007FFF 10%, #001D64) !important;
+  color: #FFFFFF !important;
+  font-family: 'Sora', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  text-decoration: none !important;
+  cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
+  box-shadow: 0 8px 20px -8px rgba(0, 29, 100, 0.65), 0 0 0 1px rgba(56, 189, 248, 0.12);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.btn-service-showcase::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-25deg);
+  transition: left 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.btn-service-showcase:hover::after {
+  left: 140%;
+}
+
+.btn-service-showcase:hover {
+  background: #002E8B !important;
+  background: color-mix(in srgb, #007FFF 10%, #00257E) !important;
+  border-color: rgba(204, 232, 255, 0.6) !important;
+  box-shadow: 0 12px 28px -6px rgba(0, 29, 100, 0.8), 0 0 20px rgba(56, 189, 248, 0.35) !important;
+  color: #FFFFFF !important;
+}
+
+.btn-service-showcase:active {
+  transform: scale(0.97) !important;
+}
+
+.btn-service-showcase .cta-arrow-icon {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-service-showcase:hover .cta-arrow-icon {
+  transform: translateX(4px);
+}
+
+/* ------------------------------------------------------------
+   9. CAROUSEL PAGINATION & PROGRESS INDICATORS
+   ------------------------------------------------------------ */
+.service-pagination-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1.85rem;
+}
+
+.service-page-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.3s ease;
+  outline: none;
+}
+
+[data-bs-theme="light"] .service-page-dot {
+  background: rgba(16, 36, 58, 0.2);
+}
+
+.service-page-dot.is-active {
+  width: 28px;
+  background: #2469EB;
+  box-shadow: 0 0 12px rgba(36, 105, 235, 0.5);
+}
+
+[data-bs-theme="light"] .service-page-dot.is-active {
+  background: #1769E8;
+  box-shadow: 0 2px 8px rgba(23, 105, 232, 0.35);
+}
+
+/* ------------------------------------------------------------
+   10. ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .service-premium-card,
+  .service-icon-pod,
+  .ai-wave-bar,
+  .radar-ring,
+  .vital-bar-fill,
+  .btn-service-showcase,
+  .service-carousel-track {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}

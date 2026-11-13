@@ -2,6 +2,7 @@
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('assets/css/cycle-motion.css') }}" />
+<link rel="stylesheet" href="{{ asset('assets/css/service-showcase.css') }}" />
 @endpush
 
 @section('content')
@@ -169,108 +170,203 @@
   </div>
 </section>
 
-<!-- ======================= 2. CORE SERVICES SECTION ======================= -->
-<section id="services" class="position-relative border-bottom border-secondary border-opacity-25 py-5 py-lg-5">
-  <div class="container-xl px-3 px-sm-4 px-lg-5">
-    
-    <div class="text-center mx-auto mb-5 rv" style="max-width: 680px;">
-      <span class="azora-badge mb-3">INTEGRATED COMMERCE &amp; GROWTH</span>
-      <h2 class="font-heading fw-bolder text-white display-6 mb-3">
-        Everything You Need to Dominate Your Market
-      </h2>
-      <p class="text-slate-300 lh-base">
-        Eliminate fragmented contractors. Azora provides unified, enterprise-grade digital architecture built to convert visitors into lifelong clients.
-      </p>
-    </div>
+<!-- ======================= 2. CORE SERVICES SHOWCASE & CAROUSEL ======================= -->
+<section id="services" class="service-showcase-section border-bottom border-secondary border-opacity-25">
+  <div class="service-ambient-glow service-ambient-glow-1" aria-hidden="true"></div>
+  <div class="service-ambient-glow service-ambient-glow-2" aria-hidden="true"></div>
+  <div class="service-blueprint-grid" aria-hidden="true"></div>
 
-    <div class="row g-4 gsap-stagger-group">
-      
-      <!-- Service 1: Website Development -->
-      <div class="col-md-6 col-lg-4 gsap-stagger-item rv in">
-        <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="card-icon-box mb-3 text-emerald-400" style="background: rgba(16, 185, 129, 0.15);">
-              <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-              </svg>
-            </div>
-            <h3 class="font-heading fw-bold text-white fs-5 mb-2">Custom Website Development</h3>
-            <p class="text-slate-400 small lh-base mb-4">
-              Lightning-fast, mobile-first business platforms built with clean code and conversion science. No clunky bloated page builders.
-            </p>
-            <ul class="list-unstyled small text-slate-300 d-flex flex-column gap-2 mb-4">
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Bespoke UX/UI design</li>
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Sub-second load times &amp; SEO markup</li>
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Lead generation &amp; quoting funnels</li>
-            </ul>
+  <div class="container-xl position-relative px-3 px-sm-4 px-lg-5" style="z-index: 2;">
+    <!-- Section Header Row with Controls Hub -->
+    <div class="service-header-wrap">
+      <div class="row align-items-end justify-content-between g-4">
+        <div class="col-lg-8">
+          <div class="service-section-eyebrow mb-3">
+            <span class="service-eyebrow-dot"></span>
+            <span>INTEGRATED COMMERCE &amp; GROWTH</span>
           </div>
-          <div class="border-top border-secondary border-opacity-25 pt-3">
-            <a href="{{ route('plans') }}#website-plans" class="text-azora-cyan text-decoration-none fw-bold small d-inline-flex align-items-center gap-1">
-              <span>View Website Plans from $99/mo</span>
-            </a>
-          </div>
+          <h2 class="font-heading service-section-title text-white">
+            Full-Spectrum Digital <span class="text-gradient-cyan">Capabilities</span>
+          </h2>
+          <p class="service-section-desc text-slate-300 mb-0">
+            Eliminate fragmented contractors. Azora engineers unified, high-converting digital platforms, search dominance, and autonomous voice intelligence.
+          </p>
         </div>
-      </div>
-
-      <!-- Service 2: Local SEO & Map Pack Dominance -->
-      <div class="col-md-6 col-lg-4 gsap-stagger-item rv in rv-d2">
-        <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="card-icon-box mb-3 text-purple-400" style="background: rgba(192, 132, 252, 0.15);">
-              <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M23 6l-9.5 9.5-5-5L1 18"/>
-              </svg>
-            </div>
-            <h3 class="font-heading fw-bold text-white fs-5 mb-2">Local SEO &amp; Organic Rankings</h3>
-            <p class="text-slate-400 small lh-base mb-4">
-              Capture high-value search intent when customers search for your services in your immediate geographic operating zone.
-            </p>
-            <ul class="list-unstyled small text-slate-300 d-flex flex-column gap-2 mb-4">
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Google Business Profile optimization</li>
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Local keyword strategy &amp; citations</li>
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Monthly transparent ROI reports</li>
-            </ul>
-          </div>
-          <div class="border-top border-secondary border-opacity-25 pt-3">
-            <a href="{{ route('plans') }}#marketing-plans" class="text-azora-cyan text-decoration-none fw-bold small d-inline-flex align-items-center gap-1">
-              <span>View SEO Packages from $285/mo</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service 3: AI Front Office Automation -->
-      <div class="col-md-6 col-lg-4 gsap-stagger-item rv in rv-d3">
-        <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="card-icon-box mb-3 text-cyan-400" style="background: rgba(56, 189, 248, 0.15); color: #38BDF8;">
-              <svg viewBox="0 0 24 24" style="width: 24px; height: 24px;" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
-                <line x1="12" y1="19" x2="12" y2="23"/>
-                <line x1="8" y1="23" x2="16" y2="23"/>
-              </svg>
-            </div>
-            <h3 class="font-heading fw-bold text-white fs-5 mb-2">AI Front-Office Agents</h3>
-            <p class="text-slate-400 small lh-base mb-4">
-              Never miss a high-ticket customer again. 24/7 intelligent voice answering, calendar booking, and WhatsApp conversational qualification.
-            </p>
-            <ul class="list-unstyled small text-slate-300 d-flex flex-column gap-2 mb-4">
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Instant call pickup within 2 rings</li>
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Automated quote dispatch</li>
-              <li class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-success"></i> Real-time CRM synchronization</li>
-            </ul>
-          </div>
-          <div class="border-top border-secondary border-opacity-25 pt-3">
-            <button type="button" onclick="AZ.openQuoteModal('ai-voice-receptionist')" class="btn btn-link p-0 text-azora-cyan text-decoration-none fw-bold small d-inline-flex align-items-center gap-1">
-              <span>Inquire for Custom AI Setup</span>
+        <div class="col-lg-4 text-lg-end d-flex justify-content-start justify-content-lg-end">
+          <div class="service-nav-cluster">
+            <button type="button" class="service-nav-btn prev" id="servicePrevBtn" aria-label="Previous service slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <span class="service-slide-counter" id="serviceSlideCounter" aria-live="polite">
+              <span class="current-num">01</span> / 03
+            </span>
+            <button type="button" class="service-nav-btn next" id="serviceNextBtn" aria-label="Next service slide">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
             </button>
           </div>
         </div>
       </div>
-
     </div>
 
+    <!-- Carousel Viewport & Track -->
+    <div class="service-carousel-viewport" id="serviceCarouselViewport" role="region" aria-roledescription="carousel" aria-label="Azora Core Services">
+      <div class="service-carousel-track" id="serviceCarouselTrack">
+        
+        <!-- Slide 1: Custom Website Development -->
+        <div class="service-carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 3: Custom Website Development">
+          <div class="service-premium-card service-card-web">
+            <div class="service-card-spotlight" aria-hidden="true"></div>
+            <div class="service-card-top">
+              <div class="service-card-header">
+                <span class="service-badge-pill">PILLAR 01 · FULL-STACK WEB</span>
+                <div class="service-icon-pod">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="font-heading service-card-title">Custom Website Development</h3>
+              <p class="service-card-desc">
+                Lightning-fast, mobile-first business platforms built with clean code and conversion science. No clunky bloated page builders.
+              </p>
+              <div class="service-micro-stage">
+                <div class="stage-browser-header">
+                  <div class="stage-dots"><span></span><span></span><span></span></div>
+                  <span class="stage-url-bar">azorasolution.com/web</span>
+                </div>
+                <div class="stage-vitals-row">
+                  <span class="vital-chip"><i class="bi bi-lightning-charge-fill"></i> 99 Score</span>
+                  <div class="vital-bar-wrap"><div class="vital-bar-fill"></div></div>
+                  <span class="font-mono-badge small" style="font-size: 0.65rem; color: #10B981;">&lt; 0.4s TTFB</span>
+                </div>
+              </div>
+              <ul class="service-features-list">
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Bespoke UX/UI design &amp; responsive layout</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Sub-second load times &amp; Core Web Vitals</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>High-conversion quoting &amp; lead funnels</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Continuous hosting &amp; 99.9% uptime SLA</span></li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <div class="service-pricing-row">
+                <span class="service-price-tag">From <strong>$99</strong>/mo</span>
+                <span class="service-badge-guarantee">Flexible Month-to-Month</span>
+              </div>
+              <a href="{{ route('plans') }}#website-plans" class="btn-service-showcase" data-magnetic-btn>
+                <span>Explore Web Plans</span>
+                <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2: Local SEO & Map Pack -->
+        <div class="service-carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3: Local SEO and Map Pack">
+          <div class="service-premium-card service-card-seo">
+            <div class="service-card-spotlight" aria-hidden="true"></div>
+            <div class="service-card-top">
+              <div class="service-card-header">
+                <span class="service-badge-pill">PILLAR 02 · ORGANIC DOMINANCE</span>
+                <div class="service-icon-pod">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 6l-9.5 9.5-5-5L1 18"/></svg>
+                </div>
+              </div>
+              <h3 class="font-heading service-card-title">Local SEO &amp; Organic Rankings</h3>
+              <p class="service-card-desc">
+                Capture high-value search intent when customers search for your services in your immediate geographic operating zone.
+              </p>
+              <div class="service-micro-stage">
+                <div class="stage-seo-radar">
+                  <div class="radar-left">
+                    <div class="radar-target">
+                      <div class="radar-ring"></div>
+                      <div class="radar-ring radar-ring-2"></div>
+                      <div class="radar-center-pin"></div>
+                    </div>
+                    <span class="radar-rank-badge">#1 Google Map Pack</span>
+                  </div>
+                  <span class="radar-delta">▲ +212% Calls</span>
+                </div>
+              </div>
+              <ul class="service-features-list">
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Google Business Profile optimization</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Local keyword strategy &amp; citations sync</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Review acquisition &amp; reputation shield</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Monthly transparent ROI &amp; ranking audits</span></li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <div class="service-pricing-row">
+                <span class="service-price-tag">From <strong>$285</strong>/mo</span>
+                <span class="service-badge-guarantee">Guaranteed Market Reach</span>
+              </div>
+              <a href="{{ route('plans') }}#marketing-plans" class="btn-service-showcase" data-magnetic-btn>
+                <span>Explore SEO Packages</span>
+                <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3: AI Front-Office Agents -->
+        <div class="service-carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3: AI Front-Office Agents">
+          <div class="service-premium-card service-card-ai">
+            <div class="service-card-spotlight" aria-hidden="true"></div>
+            <div class="service-card-top">
+              <div class="service-card-header">
+                <span class="service-badge-pill">PILLAR 03 · AUTONOMOUS AGENTS</span>
+                <div class="service-icon-pod">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                    <line x1="12" y1="19" x2="12" y2="23"/>
+                    <line x1="8" y1="23" x2="16" y2="23"/>
+                  </svg>
+                </div>
+              </div>
+              <h3 class="font-heading service-card-title">AI Front-Office Voice &amp; Chat</h3>
+              <p class="service-card-desc">
+                Never miss a high-ticket customer again. 24/7 intelligent voice answering, calendar booking, and WhatsApp conversational qualification.
+              </p>
+              <div class="service-micro-stage">
+                <div class="stage-ai-waves">
+                  <div class="ai-wave-bars">
+                    <span class="ai-wave-bar"></span><span class="ai-wave-bar"></span>
+                    <span class="ai-wave-bar"></span><span class="ai-wave-bar"></span>
+                    <span class="ai-wave-bar"></span>
+                  </div>
+                  <span class="ai-status-chip">● Live Voice &middot; &lt; 2 Rings</span>
+                </div>
+              </div>
+              <ul class="service-features-list">
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Instant call pickup within 2 rings 24/7/365</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Human-level qualification &amp; scheduling</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Automated quote dispatch &amp; instant SMS alert</span></li>
+                <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Direct two-way CRM &amp; calendar sync</span></li>
+              </ul>
+            </div>
+            <div class="service-card-bottom">
+              <div class="service-pricing-row">
+                <span class="service-price-tag">Bespoke <strong>AI Architecture</strong></span>
+                <span class="service-badge-guarantee">Zero Capital Strain</span>
+              </div>
+              <button type="button" onclick="AZ.openQuoteModal('ai-voice-receptionist')" class="btn-service-showcase" data-magnetic-btn>
+                <span>Inquire for Custom AI</span>
+                <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Pagination Progress Dots -->
+    <div class="service-pagination-wrap" id="servicePaginationWrap" role="tablist">
+      <button type="button" class="service-page-dot is-active" data-slide-to="0" aria-label="Slide 1"></button>
+      <button type="button" class="service-page-dot" data-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" class="service-page-dot" data-slide-to="2" aria-label="Slide 3"></button>
+    </div>
   </div>
 </section>
 
@@ -660,5 +756,6 @@
   }
 </script>
 <script src="{{ asset('assets/js/cycle-motion.js') }}" defer></script>
+<script src="{{ asset('assets/js/service-showcase.js') }}" defer></script>
 @endpush
 
