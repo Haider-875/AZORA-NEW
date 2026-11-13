@@ -1334,7 +1334,8 @@ input, textarea, select {
 .btn-primary,
 .btn-azure,
 .pm-btn.is-solid {
-  --pm-ink: #001D64;
+  --pm-ink: #002774;
+  --pm-ink: color-mix(in srgb, #007FFF 10%, #001D64);
   --pm-sky: #CCE8FF;
   --pm-blue: #006ABC;
   --pm-cloud: #FFFFFF;
@@ -1349,7 +1350,8 @@ input, textarea, select {
   padding: 10px 22px;
   border-radius: 8px;
   border: 1px solid rgba(204, 232, 255, 0.28) !important;
-  background: var(--pm-ink) !important;
+  background: #002774 !important;
+  background: color-mix(in srgb, #007FFF 10%, #001D64) !important;
   color: var(--pm-cloud) !important;
   font-family: 'Sora', system-ui, -apple-system, sans-serif;
   font-size: 14px;
@@ -1420,7 +1422,8 @@ input, textarea, select {
 .btn-azure:focus-visible,
 .pm-btn.is-solid:focus-visible {
   color: var(--pm-cloud) !important;
-  background: #00257E !important;
+  background: #002E8B !important;
+  background: color-mix(in srgb, #007FFF 10%, #00257E) !important;
   border-color: rgba(204, 232, 255, 0.6) !important;
   box-shadow: 0 12px 28px -6px rgba(0, 29, 100, 0.8), 0 0 20px rgba(56, 189, 248, 0.35) !important;
   transform: translateY(-2px);
@@ -1514,6 +1517,7 @@ input, textarea, select {
   padding: 8px 20px;
   border-radius: 8px;
   background: rgba(11, 19, 32, 0.6) !important;
+  background: color-mix(in srgb, #007FFF 10%, rgba(11, 19, 32, 0.6)) !important;
   color: #FFFFFF !important;
   font-family: 'Sora', system-ui, sans-serif;
   font-size: 14px;
@@ -2532,7 +2536,8 @@ html.js .rv-scale.in {
   min-height: 44px;
   padding: 10px 22px;
   border-radius: 8px;
-  background: #001D64;
+  background: #002774;
+  background: color-mix(in srgb, #007FFF 10%, #001D64);
   border: 1px solid rgba(204, 232, 255, 0.28);
   color: #FFFFFF !important;
   font-family: 'Sora', system-ui, sans-serif;
@@ -2562,7 +2567,8 @@ html.js .rv-scale.in {
 }
 
 .footer-btn-project:hover {
-  background: #00257E !important;
+  background: #002E8B !important;
+  background: color-mix(in srgb, #007FFF 10%, #00257E) !important;
   border-color: rgba(204, 232, 255, 0.6) !important;
   color: #FFFFFF !important;
   transform: translateY(-2px);
