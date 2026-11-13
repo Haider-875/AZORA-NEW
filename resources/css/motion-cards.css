@@ -10,9 +10,10 @@
   --accent: #38bdf8;
   --accent-bright: #67e8f9;
   --accent-gradient: linear-gradient(90deg, #2469eb, #38bdf8);
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --card-bg: var(--az-surface-card, #0b1320);
-  --card-radius: 1rem;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --card-bg: linear-gradient(170deg, rgba(16, 27, 46, 0.88) 0%, rgba(8, 14, 25, 0.94) 100%);
+  --card-radius: 20px;
+  --card-spotlight: rgba(56, 189, 248, 0.12);
 }
 
 [data-bs-theme="light"] {
@@ -21,17 +22,20 @@
   --accent: #1769E8;
   --accent-bright: #0077D4;
   --accent-gradient: linear-gradient(90deg, #1769E8, #0077D4);
-  --card-bg: var(--az-surface-card, #FFFFFF);
+  --card-bg: #FFFFFF;
+  --card-radius: 20px;
+  --card-spotlight: rgba(23, 105, 232, 0.08);
 }
 
-/* Base Motion Card Styling (applies to <x-card> and [data-motion-card]) */
+/* Base Motion Card Styling (applies to <x-card>, [data-motion-card], and .glass-card-interactive) */
 .motion-card,
-[data-motion-card] {
+[data-motion-card],
+.glass-card-interactive {
   position: relative;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--card-radius);
-  padding: 1.75rem;
+  padding: 1.85rem;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -39,10 +43,16 @@
   color: inherit;
   outline: none;
   isolation: isolate;
-  will-change: transform, opacity;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  will-change: transform, opacity, box-shadow;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Initial Unrevealed State */
+/* Initial Unrevealed State (for auto-stagger only) */
 [data-motion-card]:not([data-motion="off"]) {
   opacity: 0;
   transform: translate3d(0, 32px, 0) scale(0.97);
@@ -66,9 +76,10 @@
 }
 
 /* ------------------------------------------------------------
-   1. TOP BORDER DRAWING LINE (scaleX 0 to 1 on .is-visible)
+   1. TOP BORDER DRAWING LINE / ACCENT BEAM
    ------------------------------------------------------------ */
-[data-motion-card]::before {
+[data-motion-card]::before,
+.glass-card-interactive::before {
   content: '';
   position: absolute;
   top: 0;
@@ -84,7 +95,8 @@
 }
 
 [data-motion-card].is-visible::before,
-[data-motion="off"]::before {
+[data-motion="off"]::before,
+.glass-card-interactive:hover::before {
   transform: scaleX(1);
 }
 
@@ -94,17 +106,18 @@
 }
 
 /* ------------------------------------------------------------
-   2. SPOTLIGHT EFFECT (Follows cursor via --x, --y)
+   2. SPOTLIGHT EFFECT (Follows cursor via --spot-x, --spot-y or --x, --y)
    ------------------------------------------------------------ */
-[data-motion-card]::after {
+[data-motion-card]::after,
+.glass-card-interactive::after {
   content: '';
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: radial-gradient(320px circle at var(--x, 50%) var(--y, 50%), rgba(56, 189, 248, 0.12), transparent 70%);
+  background: radial-gradient(400px circle at var(--spot-x, var(--x, 50%)) var(--spot-y, var(--y, 50%)), var(--card-spotlight), transparent 75%);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.35s ease;
   z-index: 1;
 }
 
@@ -150,18 +163,24 @@
   color: #52677D !important;
 }
 
-[data-bs-theme="light"] [data-motion-card] {
+[data-bs-theme="light"] [data-motion-card],
+[data-bs-theme="light"] .glass-card-interactive,
+[data-bs-theme="light"] .motion-card {
   background: #FFFFFF !important;
   border-color: #D5E6F5 !important;
-  box-shadow: 0 10px 30px -10px rgba(16, 36, 58, 0.08), 0 2px 8px -2px rgba(16, 36, 58, 0.04) !important;
+  box-shadow: 0 18px 45px -12px rgba(16, 36, 58, 0.08), 0 2px 8px -2px rgba(16, 36, 58, 0.04), inset 0 1px 0 #FFFFFF !important;
 }
 
-[data-bs-theme="light"] [data-motion-card]:hover {
+[data-bs-theme="light"] [data-motion-card]:hover,
+[data-bs-theme="light"] .glass-card-interactive:hover,
+[data-bs-theme="light"] .motion-card:hover {
   border-color: #1769E8 !important;
-  box-shadow: 0 18px 38px -10px rgba(23, 105, 232, 0.16), 0 4px 12px -2px rgba(16, 36, 58, 0.06) !important;
+  box-shadow: 0 24px 50px -10px rgba(23, 105, 232, 0.18), 0 4px 14px -2px rgba(16, 36, 58, 0.08) !important;
 }
 
-[data-bs-theme="light"] [data-motion-card]:hover .motion-card-title {
+[data-bs-theme="light"] [data-motion-card]:hover .motion-card-title,
+[data-bs-theme="light"] .glass-card-interactive:hover h3,
+[data-bs-theme="light"] .glass-card-interactive:hover h4 {
   color: #1769E8 !important;
 }
 
@@ -175,14 +194,17 @@
    4. DESKTOP HOVER & KEYBOARD FOCUS-VISIBLE
    ------------------------------------------------------------ */
 @media (hover: hover) and (pointer: fine) {
-  [data-motion-card]:hover {
-    transform: translate3d(0, -6px, 0) scale(1.008) !important;
+  [data-motion-card]:hover,
+  .glass-card-interactive:hover,
+  .motion-card:hover {
     border-color: rgba(56, 189, 248, 0.45) !important;
-    box-shadow: 0 0 24px var(--card-glow), 0 20px 40px -12px rgba(0, 0, 0, 0.8) !important;
+    box-shadow: 0 0 28px var(--card-glow), 0 24px 52px -12px rgba(0, 0, 0, 0.85) !important;
     z-index: 3;
   }
 
-  [data-motion-card]:hover::after {
+  [data-motion-card]:hover::after,
+  .glass-card-interactive:hover::after,
+  .motion-card:hover::after {
     opacity: 1;
   }
 

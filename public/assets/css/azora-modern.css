@@ -1202,12 +1202,15 @@ input, textarea, select {
 .glass-card-interactive {
   position: relative;
   isolation: isolate;
-  background: linear-gradient(145deg, rgba(16, 27, 46, 0.78) 0%, rgba(11, 19, 32, 0.88) 100%);
+  background: linear-gradient(170deg, rgba(16, 27, 46, 0.88) 0%, rgba(8, 14, 25, 0.94) 100%);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--az-radius-lg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+  border-radius: 20px;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
               box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.35s ease;
   overflow: hidden;
@@ -1232,6 +1235,23 @@ input, textarea, select {
   z-index: 2;
 }
 
+/* Radial Mouse-following Spotlight */
+.glass-card-interactive::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(400px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(56, 189, 248, 0.12), transparent 75%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 1;
+}
+
+[data-bs-theme="light"] .glass-card-interactive::after {
+  background: radial-gradient(400px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(23, 105, 232, 0.08), transparent 75%);
+}
+
 /* Elegant Hover State: 6px lift, 1.015 scale, and rich shadow */
 .glass-card-interactive:hover {
   transform: translateY(-6px) scale(1.015);
@@ -1240,7 +1260,8 @@ input, textarea, select {
               0 0 35px -5px rgba(36, 105, 235, 0.28);
 }
 
-.glass-card-interactive:hover::before {
+.glass-card-interactive:hover::before,
+.glass-card-interactive:hover::after {
   opacity: 1;
 }
 
@@ -1280,12 +1301,22 @@ input, textarea, select {
 .pricing-card-highlight {
   position: relative;
   border: 1px solid rgba(56, 189, 248, 0.35) !important;
-  background: linear-gradient(150deg, rgba(36, 105, 235, 0.1) 0%, rgba(14, 23, 40, 0.92) 100%) !important;
-  box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.7), 0 0 24px -4px rgba(56, 189, 248, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+  background: linear-gradient(150deg, rgba(36, 105, 235, 0.12) 0%, rgba(14, 23, 40, 0.94) 100%) !important;
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.75), 0 0 28px -4px rgba(56, 189, 248, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
 }
 .pricing-card-highlight:hover {
-  border-color: rgba(56, 189, 248, 0.55) !important;
-  box-shadow: 0 20px 42px -12px rgba(0, 0, 0, 0.8), 0 0 30px -4px rgba(56, 189, 248, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  border-color: rgba(56, 189, 248, 0.65) !important;
+  box-shadow: 0 26px 54px -12px rgba(0, 0, 0, 0.85), 0 0 36px -4px rgba(56, 189, 248, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-bs-theme="light"] .pricing-card-highlight {
+  background: #FFFFFF !important;
+  border-color: #1769E8 !important;
+  box-shadow: 0 20px 45px -10px rgba(23, 105, 232, 0.18), 0 2px 8px -2px rgba(16, 36, 58, 0.04), inset 0 1px 0 #FFFFFF !important;
+}
+[data-bs-theme="light"] .pricing-card-highlight:hover {
+  border-color: #0077D4 !important;
+  box-shadow: 0 26px 54px -10px rgba(23, 105, 232, 0.26), inset 0 1px 0 #FFFFFF !important;
 }
 
 /* Dashboard / Metric Stat Boxes */

@@ -134,34 +134,60 @@
   }
 
   /**
-   * Delegated Mouse Tracking for Spotlight Effect
+   * Delegated Mouse Tracking for 3D Tilt & Spotlight Effect across ALL cards
    * Uses single pointermove listener with requestAnimationFrame
    */
   var activeCard = null;
   var mouseX = 0;
   var mouseY = 0;
   var rafPending = false;
+  var CARD_SELECTOR = '[data-motion-card], .glass-card-interactive, .motion-card, .service-premium-card';
 
-  function updateSpotlight() {
+  function updateCardPhysics() {
     if (activeCard) {
       var rect = activeCard.getBoundingClientRect();
       var x = mouseX - rect.left;
       var y = mouseY - rect.top;
+
+      // Update both variable sets for cross-CSS compatibility
       activeCard.style.setProperty('--x', x + 'px');
       activeCard.style.setProperty('--y', y + 'px');
+      activeCard.style.setProperty('--spot-x', x + 'px');
+      activeCard.style.setProperty('--spot-y', y + 'px');
+
+      // Subtle 3D Perspective Tilt (clamped to max ±3.5deg)
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var tiltX = ((y - centerY) / centerY) * -3.2;
+      var tiltY = ((x - centerX) / centerX) * 3.5;
+      activeCard.style.transform = 'perspective(1000px) rotateX(' + tiltX.toFixed(2) + 'deg) rotateY(' + tiltY.toFixed(2) + 'deg) translateY(-6px)';
     }
     rafPending = false;
   }
 
-  function setupSpotlightDelegation() {
-    var hasTouchOnly = ('ontouchstart' in window) && !window.matchMedia('(pointer:fine)').matches;
-    if (hasTouchOnly) return; // Do not run on touch devices
+  function resetCardTilt(card) {
+    if (card) {
+      card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) translateY(0)';
+    }
+  }
+
+  function setupCardTiltDelegation() {
+    var hasFinePointer = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+    var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!hasFinePointer || prefersReduced) return;
 
     document.addEventListener('pointermove', function (e) {
-      var card = e.target && e.target.closest ? e.target.closest('[data-motion-card]') : null;
+      var card = e.target && e.target.closest ? e.target.closest(CARD_SELECTOR) : null;
       if (!card || card.getAttribute('data-motion') === 'off') {
-        activeCard = null;
+        if (activeCard) {
+          resetCardTilt(activeCard);
+          activeCard = null;
+        }
         return;
+      }
+
+      if (activeCard && activeCard !== card) {
+        resetCardTilt(activeCard);
       }
 
       activeCard = card;
@@ -170,27 +196,67 @@
 
       if (!rafPending) {
         rafPending = true;
-        requestAnimationFrame(updateSpotlight);
+        requestAnimationFrame(updateCardPhysics);
       }
     }, { passive: true });
+
+    document.addEventListener('pointerleave', function () {
+      if (activeCard) {
+        resetCardTilt(activeCard);
+        activeCard = null;
+      }
+    });
+  }
+
+  /**
+   * Magnetic Button Interaction for sitewide CTA buttons
+   */
+  function setupMagneticButtons() {
+    var hasFinePointer = window.matchMedia && window.matchMedia('(pointer:fine)').matches;
+    var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!hasFinePointer || prefersReduced) return;
+
+    var BTN_SELECTOR = '[data-magnetic-btn], .btn-modern-primary, .btn-service-showcase';
+
+    document.addEventListener('mousemove', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest(BTN_SELECTOR) : null;
+      if (!btn) return;
+
+      var rect = btn.getBoundingClientRect();
+      var x = e.clientX - rect.left - rect.width / 2;
+      var y = e.clientY - rect.top - rect.height / 2;
+
+      var pullX = x * 0.22;
+      var pullY = y * 0.22;
+      btn.style.transform = 'translate3d(' + pullX.toFixed(1) + 'px, ' + pullY.toFixed(1) + 'px, 0)';
+    }, { passive: true });
+
+    document.addEventListener('mouseout', function (e) {
+      var btn = e.target && e.target.closest ? e.target.closest(BTN_SELECTOR) : null;
+      if (btn && (!e.relatedTarget || !btn.contains(e.relatedTarget))) {
+        btn.style.transform = 'translate3d(0, 0, 0)';
+      }
+    });
   }
 
   // Expose global initializer for SPA / AJAX / Dynamic Content
   window.initMotionCards = initMotionCards;
 
   // Listen for DOM ready and frameworks events (Turbo, Livewire)
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      initMotionCards();
-      setupSpotlightDelegation();
-    });
-  } else {
+  function boot() {
     initMotionCards();
-    setupSpotlightDelegation();
+    setupCardTiltDelegation();
+    setupMagneticButtons();
   }
 
-  window.addEventListener('turbo:load', initMotionCards);
-  window.addEventListener('livewire:navigated', initMotionCards);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+
+  window.addEventListener('turbo:load', boot);
+  window.addEventListener('livewire:navigated', boot);
 
   // Resize handler for responsive stagger
   window.addEventListener('resize', function () {

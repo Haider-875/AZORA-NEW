@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@push('styles')
+<link rel="stylesheet" href="{{ asset('assets/css/service-showcase.css') }}" />
+@endpush
+
 @section('content')
 <!-- HERO SECTION -->
 <section class="position-relative overflow-hidden border-bottom border-secondary border-opacity-25 pb-5 pt-4 pt-lg-5">
@@ -17,13 +21,13 @@
       </p>
 
       <div class="d-flex flex-wrap gap-2">
-        <a href="#website-plans" class="btn-modern-primary py-2 px-3 small">
+        <a href="#website-plans" class="btn-service-showcase py-2 px-3 small" style="width: auto;" data-magnetic-btn>
           <span>Website Plans</span>
         </a>
-        <a href="#marketing-plans" class="btn-modern-secondary py-2 px-3 small">
+        <a href="#marketing-plans" class="btn-service-showcase py-2 px-3 small" style="width: auto;" data-magnetic-btn>
           <span>Local SEO Plans</span>
         </a>
-        <a href="#compare-table" class="btn-modern-secondary py-2 px-3 small">
+        <a href="#compare-table" class="btn-service-showcase py-2 px-3 small" style="width: auto;" data-magnetic-btn>
           <span>Feature Comparison</span>
         </a>
       </div>
@@ -49,88 +53,130 @@
       
       <!-- Starter Plan -->
       <div class="col-md-6 col-lg-4 gsap-stagger-item rv in">
-        <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="font-mono-badge text-slate-400 small">STARTER</span>
-              <span class="badge bg-secondary bg-opacity-25 text-slate-300 font-mono-badge" style="font-size: 0.6rem;">LOCAL BRANDS</span>
+        <div class="service-premium-card service-card-web h-100" data-motion-card>
+          <div class="service-card-spotlight" aria-hidden="true"></div>
+          <div class="service-card-top">
+            <div class="service-card-header">
+              <span class="service-badge-pill">TIER 01 · FOUNDATION</span>
+              <span class="font-mono-badge small" style="font-size: 0.65rem; color: #10B981;">LOCAL BRANDS</span>
             </div>
-            <h3 class="font-heading fw-bold text-white fs-4 mb-2">Website Starter</h3>
-            <p class="text-slate-400 small mb-3">Everything a small business needs to establish a professional, credible web presence.</p>
-            <div class="d-flex align-items-baseline gap-1 my-3">
-              <span class="font-heading display-6 fw-bolder text-white">$99</span>
-              <span class="text-slate-400 small">/month</span>
+            <h3 class="font-heading service-card-title mt-2">Website Starter</h3>
+            <p class="service-card-desc">
+              Everything a small business needs to establish a professional, credible web presence.
+            </p>
+            <div class="service-micro-stage my-3">
+              <div class="d-flex align-items-baseline justify-content-between p-2">
+                <div class="d-flex align-items-baseline gap-1">
+                  <span class="font-heading display-6 fw-bolder text-white">$99</span>
+                  <span class="service-badge-guarantee">/month</span>
+                </div>
+                <span class="vital-chip"><i class="bi bi-shield-check"></i> 5 Pages</span>
+              </div>
             </div>
-            <ul class="list-unstyled small text-slate-300 d-flex flex-column gap-2 mb-4 border-top border-secondary border-opacity-25 pt-3">
-              <li><i class="bi bi-check2 text-info me-2"></i> Professional business website</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Mobile-responsive UI design</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Up to 5 custom website pages</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Contact &amp; rapid quote forms</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Basic SEO metadata setup</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Security, SSL &amp; speed optimization</li>
+            <ul class="service-features-list">
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Professional business website &amp; responsive UI</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Up to 5 custom website pages</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Interactive contact &amp; rapid quote forms</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Basic SEO metadata &amp; speed setup</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Managed cloud hosting &amp; SSL included</span></li>
             </ul>
           </div>
-          <a href="{{ route('quote', ['type' => 'plan', 'product' => 'website-starter']) }}" class="btn-modern-secondary w-100 py-2 text-center small">
-            <span>Get Started</span>
-          </a>
+          <div class="service-card-bottom">
+            <div class="service-pricing-row">
+              <span class="service-price-tag">From <strong>$99</strong>/mo</span>
+              <span class="service-badge-guarantee">Month-to-Month</span>
+            </div>
+            <a href="{{ route('quote', ['type' => 'plan', 'product' => 'website-starter']) }}" class="btn-service-showcase" data-magnetic-btn>
+              <span>Get Started</span>
+              <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- Growth Plan (Featured) -->
       <div class="col-md-6 col-lg-4 gsap-stagger-item rv in rv-d2">
-        <div class="glass-card-interactive pricing-card-highlight p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="font-mono-badge text-azora-cyan small">GROWTH</span>
-              <span class="badge bg-primary rounded-pill font-mono-badge" style="font-size: 0.6rem;">MOST POPULAR</span>
+        <div class="service-premium-card service-card-ai pricing-card-highlight h-100" data-motion-card style="--card-accent: #38BDF8;">
+          <div class="service-card-spotlight" aria-hidden="true"></div>
+          <div class="service-card-top">
+            <div class="service-card-header">
+              <span class="service-badge-pill" style="background: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4);">TIER 02 · MOST POPULAR</span>
+              <span class="badge bg-primary rounded-pill font-mono-badge" style="font-size: 0.6rem;">HIGH CONVERSION</span>
             </div>
-            <h3 class="font-heading fw-bold text-white fs-4 mb-2">Website Growth</h3>
-            <p class="text-slate-300 small mb-3">A complete growth-focused website built to turn traffic into calls, leads, and clients.</p>
-            <div class="d-flex align-items-baseline gap-1 my-3">
-              <span class="font-heading display-6 fw-bolder text-azora-cyan">$185</span>
-              <span class="text-slate-400 small">/month</span>
+            <h3 class="font-heading service-card-title mt-2">Website Growth</h3>
+            <p class="service-card-desc">
+              A complete growth-focused website built to turn traffic into calls, leads, and clients.
+            </p>
+            <div class="service-micro-stage my-3">
+              <div class="d-flex align-items-baseline justify-content-between p-2">
+                <div class="d-flex align-items-baseline gap-1">
+                  <span class="font-heading display-6 fw-bolder text-gradient-cyan">$185</span>
+                  <span class="service-badge-guarantee">/month</span>
+                </div>
+                <span class="vital-chip" style="color: #38BDF8; border-color: rgba(56, 189, 248, 0.3);"><i class="bi bi-star-fill"></i> Best ROI</span>
+              </div>
             </div>
-            <ul class="list-unstyled small text-white d-flex flex-column gap-2 mb-4 border-top border-secondary border-opacity-25 pt-3">
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> <strong>Everything in Starter</strong></li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Up to 10 custom website pages</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Conversion-focused UI architecture</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Advanced technical SEO structure</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Google Business Profile integration</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Monthly website updates &amp; tweaks</li>
+            <ul class="service-features-list">
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span><strong>Everything in Starter</strong></span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Up to 10 custom website pages</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Conversion-focused UI architecture</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Advanced technical SEO structure</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Monthly website updates &amp; tweaks</span></li>
             </ul>
           </div>
-          <a href="{{ route('quote', ['type' => 'plan', 'product' => 'website-growth']) }}" class="btn-modern-primary w-100 py-2 text-center small">
-            <span>Choose Growth</span>
-          </a>
+          <div class="service-card-bottom">
+            <div class="service-pricing-row">
+              <span class="service-price-tag">From <strong>$185</strong>/mo</span>
+              <span class="service-badge-guarantee">Guaranteed Performance</span>
+            </div>
+            <a href="{{ route('quote', ['type' => 'plan', 'product' => 'website-growth']) }}" class="btn-service-showcase" data-magnetic-btn>
+              <span>Choose Growth</span>
+              <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- Premium Plan -->
       <div class="col-md-6 col-lg-4 gsap-stagger-item rv in rv-d3">
-        <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="font-mono-badge text-slate-400 small">PREMIUM</span>
-              <span class="badge bg-secondary bg-opacity-25 text-slate-300 font-mono-badge" style="font-size: 0.6rem;">SCALING TEAMS</span>
+        <div class="service-premium-card service-card-seo h-100" data-motion-card style="--card-accent: #C084FC; --card-spotlight: rgba(192, 132, 252, 0.12); --card-border-glow: rgba(192, 132, 252, 0.35);">
+          <div class="service-card-spotlight" aria-hidden="true"></div>
+          <div class="service-card-top">
+            <div class="service-card-header">
+              <span class="service-badge-pill" style="color: #C084FC; border-color: rgba(192, 132, 252, 0.28); background: rgba(192, 132, 252, 0.08);">TIER 03 · ENTERPRISE</span>
+              <span class="font-mono-badge small" style="font-size: 0.65rem; color: #C084FC;">SCALE BRANDS</span>
             </div>
-            <h3 class="font-heading fw-bold text-white fs-4 mb-2">Website Premium</h3>
-            <p class="text-slate-400 small mb-3">A premium digital presence for businesses ready to compete and dominate their sector.</p>
-            <div class="d-flex align-items-baseline gap-1 my-3">
-              <span class="font-heading display-6 fw-bolder text-white">$249</span>
-              <span class="text-slate-400 small">/month</span>
+            <h3 class="font-heading service-card-title mt-2">Website Premium</h3>
+            <p class="service-card-desc">
+              A premium digital presence for businesses ready to compete and dominate their sector.
+            </p>
+            <div class="service-micro-stage my-3">
+              <div class="d-flex align-items-baseline justify-content-between p-2">
+                <div class="d-flex align-items-baseline gap-1">
+                  <span class="font-heading display-6 fw-bolder text-white" style="color: #C084FC !important;">$249</span>
+                  <span class="service-badge-guarantee">/month</span>
+                </div>
+                <span class="vital-chip" style="color: #C084FC; border-color: rgba(192, 132, 252, 0.3);"><i class="bi bi-lightning-charge"></i> Priority SLA</span>
+              </div>
             </div>
-            <ul class="list-unstyled small text-slate-300 d-flex flex-column gap-2 mb-4 border-top border-secondary border-opacity-25 pt-3">
-              <li><i class="bi bi-check2 text-info me-2"></i> <strong>Everything in Growth</strong></li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Unlimited content &amp; landing sections</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Advanced conversion optimization funnels</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Custom analytics &amp; goal attribution setup</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Priority engineering support queue</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Continuous improvements &amp; A/B speed audit</li>
+            <ul class="service-features-list">
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span><strong>Everything in Growth</strong></span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span>Unlimited content &amp; landing sections</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span>Advanced conversion optimization funnels</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span>Priority engineering support queue</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span>Continuous improvements &amp; A/B speed audit</span></li>
             </ul>
           </div>
-          <a href="{{ route('quote', ['type' => 'plan', 'product' => 'website-premium']) }}" class="btn-modern-secondary w-100 py-2 text-center small">
-            <span>Go Premium</span>
-          </a>
+          <div class="service-card-bottom">
+            <div class="service-pricing-row">
+              <span class="service-price-tag">From <strong style="color: #C084FC;">$249</strong>/mo</span>
+              <span class="service-badge-guarantee">Full Turnkey SLA</span>
+            </div>
+            <a href="{{ route('quote', ['type' => 'plan', 'product' => 'website-premium']) }}" class="btn-service-showcase" data-magnetic-btn>
+              <span>Go Premium</span>
+              <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -157,87 +203,129 @@
       
       <!-- Local Starter -->
       <div class="col-md-6 col-lg-4 gsap-stagger-item rv in">
-        <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="font-mono-badge text-slate-400 small">LOCAL STARTER</span>
-              <span class="badge bg-secondary bg-opacity-25 text-slate-300 font-mono-badge" style="font-size: 0.6rem;">FOUNDATION</span>
+        <div class="service-premium-card service-card-web h-100" data-motion-card>
+          <div class="service-card-spotlight" aria-hidden="true"></div>
+          <div class="service-card-top">
+            <div class="service-card-header">
+              <span class="service-badge-pill">GROWTH 01 · LOCAL</span>
+              <span class="font-mono-badge small" style="font-size: 0.65rem; color: #10B981;">GEO TARGET</span>
             </div>
-            <h3 class="font-heading fw-bold text-white fs-4 mb-2">Local Marketing Starter</h3>
-            <p class="text-slate-400 small mb-3">A strong local foundation to help nearby customers discover and choose your business.</p>
-            <div class="d-flex align-items-baseline gap-1 my-3">
-              <span class="font-heading display-6 fw-bolder text-white">$285</span>
-              <span class="text-slate-400 small">/month</span>
+            <h3 class="font-heading service-card-title mt-2">Local Marketing Starter</h3>
+            <p class="service-card-desc">
+              A strong local foundation to help nearby customers discover and choose your business.
+            </p>
+            <div class="service-micro-stage my-3">
+              <div class="d-flex align-items-baseline justify-content-between p-2">
+                <div class="d-flex align-items-baseline gap-1">
+                  <span class="font-heading display-6 fw-bolder text-white">$285</span>
+                  <span class="service-badge-guarantee">/month</span>
+                </div>
+                <span class="vital-chip"><i class="bi bi-geo-alt-fill"></i> Local Map</span>
+              </div>
             </div>
-            <ul class="list-unstyled small text-slate-300 d-flex flex-column gap-2 mb-4 border-top border-secondary border-opacity-25 pt-3">
-              <li><i class="bi bi-check2 text-info me-2"></i> Google Business Profile optimization</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Local keyword strategy &amp; competitor scan</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Citation audit &amp; directory consistency</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Monthly performance &amp; rankings report</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Monthly strategy review with engineer</li>
+            <ul class="service-features-list">
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Google Business Profile optimization</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Local keyword strategy &amp; competitor scan</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Citation audit &amp; directory consistency</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Monthly performance &amp; rankings report</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Monthly strategy review with engineer</span></li>
             </ul>
           </div>
-          <a href="{{ route('quote', ['type' => 'plan', 'product' => 'marketing-starter']) }}" class="btn-modern-secondary w-100 py-2 text-center small">
-            <span>Get Started</span>
-          </a>
+          <div class="service-card-bottom">
+            <div class="service-pricing-row">
+              <span class="service-price-tag">From <strong>$285</strong>/mo</span>
+              <span class="service-badge-guarantee">No Long Contracts</span>
+            </div>
+            <a href="{{ route('quote', ['type' => 'plan', 'product' => 'marketing-starter']) }}" class="btn-service-showcase" data-magnetic-btn>
+              <span>Get Started</span>
+              <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- Growth Marketing (Featured) -->
       <div class="col-md-6 col-lg-4 gsap-stagger-item rv in rv-d2">
-        <div class="glass-card-interactive pricing-card-highlight p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="font-mono-badge text-azora-cyan small">GROWTH</span>
+        <div class="service-premium-card service-card-seo pricing-card-highlight h-100" data-motion-card>
+          <div class="service-card-spotlight" aria-hidden="true"></div>
+          <div class="service-card-top">
+            <div class="service-card-header">
+              <span class="service-badge-pill">GROWTH 02 · ACCELERATOR</span>
               <span class="badge bg-primary rounded-pill font-mono-badge" style="font-size: 0.6rem;">RECOMMENDED</span>
             </div>
-            <h3 class="font-heading fw-bold text-white fs-4 mb-2">Growth Marketing &amp; Local SEO</h3>
-            <p class="text-slate-300 small mb-3">A comprehensive campaign combining local SEO, on-page optimization, and content strategy.</p>
-            <div class="d-flex align-items-baseline gap-1 my-3">
-              <span class="font-heading display-6 fw-bolder text-azora-cyan">$365</span>
-              <span class="text-slate-400 small">/month</span>
+            <h3 class="font-heading service-card-title mt-2">Growth Marketing &amp; Local SEO</h3>
+            <p class="service-card-desc">
+              A comprehensive campaign combining local SEO, on-page optimization, and content strategy.
+            </p>
+            <div class="service-micro-stage my-3">
+              <div class="d-flex align-items-baseline justify-content-between p-2">
+                <div class="d-flex align-items-baseline gap-1">
+                  <span class="font-heading display-6 fw-bolder text-gradient-cyan">$365</span>
+                  <span class="service-badge-guarantee">/month</span>
+                </div>
+                <span class="vital-chip" style="color: #38BDF8; border-color: rgba(56, 189, 248, 0.3);"><i class="bi bi-graph-up-arrow"></i> +212% Calls</span>
+              </div>
             </div>
-            <ul class="list-unstyled small text-white d-flex flex-column gap-2 mb-4 border-top border-secondary border-opacity-25 pt-3">
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> <strong>Everything in Local Starter</strong></li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Advanced high-intent keyword targeting</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> On-page technical SEO optimization</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Local content &amp; landing page strategy</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Competitor backlink &amp; ranking monitoring</li>
-              <li><i class="bi bi-check2-circle text-azora-cyan me-2"></i> Monthly ROI &amp; customer inquiry report</li>
+            <ul class="service-features-list">
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span><strong>Everything in Local Starter</strong></span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Advanced high-intent keyword targeting</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>On-page technical SEO optimization</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Competitor backlink &amp; ranking monitoring</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet">✦</span><span>Monthly ROI &amp; customer inquiry report</span></li>
             </ul>
           </div>
-          <a href="{{ route('quote', ['type' => 'plan', 'product' => 'marketing-growth']) }}" class="btn-modern-primary w-100 py-2 text-center small">
-            <span>Choose Growth</span>
-          </a>
+          <div class="service-card-bottom">
+            <div class="service-pricing-row">
+              <span class="service-price-tag">From <strong>$365</strong>/mo</span>
+              <span class="service-badge-guarantee">Guaranteed Dominance</span>
+            </div>
+            <a href="{{ route('quote', ['type' => 'plan', 'product' => 'marketing-growth']) }}" class="btn-service-showcase" data-magnetic-btn>
+              <span>Choose Growth</span>
+              <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
       <!-- Market Leader -->
       <div class="col-md-6 col-lg-4 gsap-stagger-item rv in rv-d3">
-        <div class="glass-card-interactive p-4 h-100 d-flex flex-column justify-content-between" data-motion-card>
-          <div>
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <span class="font-mono-badge text-slate-400 small">LEADER</span>
-              <span class="badge bg-secondary bg-opacity-25 text-slate-300 font-mono-badge" style="font-size: 0.6rem;">MARKET LEADER</span>
+        <div class="service-premium-card service-card-seo h-100" data-motion-card style="--card-accent: #C084FC; --card-spotlight: rgba(192, 132, 252, 0.12); --card-border-glow: rgba(192, 132, 252, 0.35);">
+          <div class="service-card-spotlight" aria-hidden="true"></div>
+          <div class="service-card-top">
+            <div class="service-card-header">
+              <span class="service-badge-pill" style="color: #C084FC; border-color: rgba(192, 132, 252, 0.28); background: rgba(192, 132, 252, 0.08);">GROWTH 03 · DOMINANCE</span>
+              <span class="font-mono-badge small" style="font-size: 0.65rem; color: #C084FC;">REGIONAL LEADER</span>
             </div>
-            <h3 class="font-heading fw-bold text-white fs-4 mb-2">Market Leader Marketing</h3>
-            <p class="text-slate-400 small mb-3">Our highest tier for businesses demanding top rankings across multiple services or locations.</p>
-            <div class="d-flex align-items-baseline gap-1 my-3">
-              <span class="font-heading display-6 fw-bolder text-white">$399</span>
-              <span class="text-slate-400 small">/month</span>
+            <h3 class="font-heading service-card-title mt-2">Market Leader Marketing</h3>
+            <p class="service-card-desc">
+              Our highest tier for businesses demanding top rankings across multiple services or locations.
+            </p>
+            <div class="service-micro-stage my-3">
+              <div class="d-flex align-items-baseline justify-content-between p-2">
+                <div class="d-flex align-items-baseline gap-1">
+                  <span class="font-heading display-6 fw-bolder text-white" style="color: #C084FC !important;">$399</span>
+                  <span class="service-badge-guarantee">/month</span>
+                </div>
+                <span class="vital-chip" style="color: #C084FC; border-color: rgba(192, 132, 252, 0.3);"><i class="bi bi-trophy-fill"></i> #1 Rank</span>
+              </div>
             </div>
-            <ul class="list-unstyled small text-slate-300 d-flex flex-column gap-2 mb-4 border-top border-secondary border-opacity-25 pt-3">
-              <li><i class="bi bi-check2 text-info me-2"></i> <strong>Everything in Growth</strong></li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Advanced multi-location SEO campaigns</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Authority content &amp; conversion landing pages</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Comprehensive competitor tracking</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Lead generation funnel optimization</li>
-              <li><i class="bi bi-check2 text-info me-2"></i> Priority engineering strategy &amp; dedicated support</li>
+            <ul class="service-features-list">
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span><strong>Everything in Growth</strong></span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span>Advanced multi-location SEO campaigns</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span>Authority content &amp; conversion landing pages</span></li>
+              <li class="service-feature-item"><span class="service-feature-bullet" style="color: #C084FC;">✦</span><span>Priority engineering strategy &amp; dedicated support</span></li>
             </ul>
           </div>
-          <a href="{{ route('quote', ['type' => 'plan', 'product' => 'marketing-premium']) }}" class="btn-modern-secondary w-100 py-2 text-center small">
-            <span>Go Market Leader</span>
-          </a>
+          <div class="service-card-bottom">
+            <div class="service-pricing-row">
+              <span class="service-price-tag">From <strong style="color: #C084FC;">$399</strong>/mo</span>
+              <span class="service-badge-guarantee">Full Regional Scope</span>
+            </div>
+            <a href="{{ route('quote', ['type' => 'plan', 'product' => 'marketing-premium']) }}" class="btn-service-showcase" data-magnetic-btn>
+              <span>Go Market Leader</span>
+              <svg class="cta-arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+          </div>
         </div>
       </div>
 
