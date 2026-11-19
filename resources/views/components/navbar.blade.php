@@ -97,11 +97,6 @@
 
       <!-- Right Quick Action CTAs -->
       <div class="d-flex align-items-center gap-2 gap-sm-3">
-        <a href="tel:+19843888298" class="nav-phone-btn d-none d-lg-inline-flex py-2 px-3" style="font-size: 0.8rem;" title="Call Azora Solutions: (984) 388-8298" aria-label="Call Azora Solutions at (984) 388-8298">
-          <i class="bi bi-telephone-fill text-azora-cyan" style="font-size: 0.75rem;"></i>
-          <span>(984) 388-8298</span>
-        </a>
-
         <!-- Animated Light/Dark Theme Switcher -->
         <button type="button" class="theme-toggle-btn d-inline-flex" id="theme-toggle-btn" aria-label="Toggle light or dark theme" title="Switch Theme" onclick="AZ.toggleTheme()">
           <span class="theme-toggle-track">
