@@ -7,9 +7,10 @@
       <div class="col-lg-4 col-md-6">
         <a href="{{ route('home') }}" class="navbar-brand-modern mb-3" aria-label="Azora Solutions Home">
           <span class="brand-icon-box">
-            <svg viewBox="0 0 64 64" class="brand-logo-svg" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M32 14L50 50H41.4L32 26.4L22.6 50H14L32 14Z" fill="#FFFFFF"/>
-              <circle cx="32" cy="43" r="4.2" fill="#38BDF8"/>
+            <svg viewBox="0 0 64 64" class="brand-logo-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="64" height="64" rx="14" fill="#0B1320"/>
+              <path d="M32 14 50 50h-8.6L32 26.4 22.6 50H14z" fill="#fff"/>
+              <circle cx="32" cy="45" r="4.4" fill="#2469EB"/>
             </svg>
           </span>
           <span class="brand-text-box">
